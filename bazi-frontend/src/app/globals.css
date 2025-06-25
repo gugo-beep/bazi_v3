@@ -16,6 +16,12 @@
   --earth: #ff9f0a;
   --metal: #8e8e93;
   --water: #0071e3;
+  /* --- 新增：五行颜色变量 --- */
+  --wood: #34a853; /* 木 */
+  --fire: #e94335; /* 火 */
+  --earth: #a2845e; /* 土 */
+  --metal: #f7a745; /* 金 */
+  --water: #0071e3; /* 水 */
 }
 
 @theme inline {
@@ -64,16 +70,51 @@ body {
 .element-metal { color: var(--metal); }
 .element-water { color: var(--water); }
 
-/* 关系连线样式 */
+/* --- 新增：关系连线相关样式 --- */
+.relation-line-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 4 for pillars, 2 for dayun/liunian */
+  gap: 0;
+  position: relative;
+  align-items: center;
+}
+
+.relation-item {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relation-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .relation-text {
   background: var(--card-background);
-  padding: 0 4px;
+  padding: 1px 5px;
   border-radius: 6px;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 500;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  color: var(--foreground);
+  fill: var(--foreground);
 }
+
 
 /* 天干连线颜色 */
 .gan-relation line,
@@ -93,7 +134,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* 按钮样式 */
 .apple-button {
   background: var(--primary);
   color: white;
@@ -110,7 +150,6 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* 切换组件样式 */
 .apple-tab {
   border-radius: 980px;
   background: rgba(0, 0, 0, 0.06);
@@ -132,7 +171,6 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* 动画效果 */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

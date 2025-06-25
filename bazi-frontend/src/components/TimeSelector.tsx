@@ -11,7 +11,20 @@ interface TimeSelectorProps {
   qiyunYear: number | null;
 }
 
-// bazi-frontend/src/components/TimeSelector.tsx
+// --- 新增：可复用的五行颜色工具函数 ---
+const getElementClass = (value: string | null | undefined): string => {
+  if (!value) return '';
+  const elementMap: Record<string, string> = {
+    '甲': 'element-wood', '乙': 'element-wood', '寅': 'element-wood', '卯': 'element-wood',
+    '丙': 'element-fire', '丁': 'element-fire', '巳': 'element-fire', '午': 'element-fire',
+    '戊': 'element-earth', '己': 'element-earth', '丑': 'element-earth', '辰': 'element-earth', '未': 'element-earth', '戌': 'element-earth',
+    '庚': 'element-metal', '辛': 'element-metal', '申': 'element-metal', '酉': 'element-metal',
+    '壬': 'element-water', '癸': 'element-water', '子': 'element-water', '亥': 'element-water',
+  };
+  return elementMap[value] || 'text-gray-800';
+};
+
+
 
 // 可重用的卡片组件
 const PillarCard = ({
@@ -19,7 +32,7 @@ const PillarCard = ({
   isSelected,
   onClick,
   isDaYun,
-  // 用于在渲染大运卡片时参考当前选中的流年
+
   activeLiunianInDayun,
 }: {
   item: DaYunPillar | LiuNianPillar;
