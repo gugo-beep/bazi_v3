@@ -1,49 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f7;
+  --foreground: #1d1d1f;
+  --card-background: rgba(255, 255, 255, 0.8);
+  --primary: #0071e3;
+  --primary-hover: #0077ed;
+  --secondary: #86868b;
+  --border: rgba(0, 0, 0, 0.1);
+  --success: #28cd41;
+  --warning: #ff9f0a;
+  --danger: #ff3b30;
+  --wood: #34c759;
+  --fire: #ff3b30;
+  --earth: #ff9f0a;
+  --metal: #8e8e93;
+  --water: #0071e3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1d1d1f;
+    --foreground: #f5f5f7;
+    --card-background: rgba(30, 30, 32, 0.8);
+    --border: rgba(255, 255, 255, 0.15);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
+
+.glass-card {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--card-background);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.element-wood { color: var(--wood); }
+.element-fire { color: var(--fire); }
+.element-earth { color: var(--earth); }
+.element-metal { color: var(--metal); }
+.element-water { color: var(--water); }
 
 /* 关系连线样式 */
 .relation-text {
-  background: white;
-  padding: 0 2px;
-  border-radius: 4px;
+  background: var(--card-background);
+  padding: 0 4px;
+  border-radius: 6px;
   font-size: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* 天干连线颜色 */
 .gan-relation line,
 .gan-relation path {
-  stroke: #6366f1;
+  stroke: var(--primary);
   stroke-dasharray: 4;
+  stroke-linecap: round;
+  transition: all 0.3s ease;
 }
 
 /* 地支连线颜色 */
 .zhi-relation line,
 .zhi-relation path {
-  stroke: #8b5cf6;
+  stroke: var(--secondary);
   stroke-dasharray: 4;
+  stroke-linecap: round;
+  transition: all 0.3s ease;
+}
+
+/* 按钮样式 */
+.apple-button {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 980px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.apple-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* 切换组件样式 */
+.apple-tab {
+  border-radius: 980px;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px;
+  display: flex;
+  overflow: hidden;
+}
+
+.apple-tab-item {
+  padding: 6px 12px;
+  border-radius: 980px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.apple-tab-item.active {
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
 }

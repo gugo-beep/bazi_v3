@@ -11,20 +11,22 @@ interface TimeSelectorProps {
   qiyunYear: number | null;
 }
 
+// bazi-frontend/src/components/TimeSelector.tsx
+
 // 可重用的卡片组件
 const PillarCard = ({
   item,
   isSelected,
   onClick,
   isDaYun,
-  // 新增一个 prop，用于在渲染大运卡片时参考当前选中的流年
+  // 用于在渲染大运卡片时参考当前选中的流年
   activeLiunianInDayun,
 }: {
   item: DaYunPillar | LiuNianPillar;
   isSelected: boolean;
   onClick: () => void;
   isDaYun?: boolean;
-  activeLiunianInDayun?: LiuNianPillar | null; // 新增 prop
+  activeLiunianInDayun?: LiuNianPillar | null;
 }) => {
   let year: number | string | undefined;
   let age: number | string | undefined;
@@ -36,10 +38,18 @@ const PillarCard = ({
 
   // --- 逻辑修改开始 ---
   if (isDayunType(item) && item.id === 'qyq') {
-    // Case 1: "起运前" 大运
+    // Case 1: "起运前" 大运卡片
     cardTitle = "起运前";
-    // 优先从当前激活的流年（activeLiunianInDayun）中获取小运信息
-    const targetLiunian = activeLiunianInDayun || (item.liunian && item.liunian[0]);
+    let targetLiunian: LiuNianPillar | undefined | null = null;
+
+    if (isSelected) {
+      // 如果"起运前"卡片是当前选中的大运，则其显示应同步当前选中的流年
+      targetLiunian = activeLiunianInDayun;
+    } else {
+      // 如果"起运前"卡片不是当前选中的大运，则应始终显示其列表中的第一个流年（即初始状态）
+      targetLiunian = item.liunian && item.liunian[0];
+    }
+    
     if (targetLiunian) {
       age = targetLiunian.age;
       // 从新的、结构完整的 xiaoYun 对象中获取干支
@@ -49,7 +59,7 @@ const PillarCard = ({
       }
     }
   } else if (isDayunType(item)) {
-    // Case 2: 正常大运
+    // Case 2: 正常大运卡片
     cardTitle = `${item.start_year}-${item.end_year}`;
     year = item.start_year;
     age = item.start_age;
@@ -83,12 +93,14 @@ const PillarCard = ({
 };
 
 
+
 export default function TimeSelector({
   dayunList,
   selectedDayun,
   selectedLiunian,
   onSelect,
-}: TimeSelectorProps) { // qiyunYear 已不再需要，可以移除
+  qiyunYear,
+}: TimeSelectorProps) {
 
   const handleDayunClick = (dayun: DaYunPillar) => {
     const firstLiunian = dayun.liunian && dayun.liunian.length > 0 ? dayun.liunian[0] : null;
@@ -102,36 +114,41 @@ export default function TimeSelector({
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg mt-6 border border-gray-200">
-      <h3 className="text-xl font-semibold mb-4 text-gray-800 px-2">大运</h3>
-      <div className="flex space-x-3 overflow-x-auto pb-4 px-2">
-        {dayunList.map((dayun) => ( // 直接使用传入的 dayunList
-          <PillarCard
-            key={dayun.id}
-            item={dayun}
-            isSelected={selectedDayun?.id === dayun.id}
-            onClick={() => handleDayunClick(dayun)}
-            isDaYun={true}
-            // 将当前选中的流年传递给大运卡片，用于同步显示
-            activeLiunianInDayun={selectedLiunian} 
-          />
-        ))}
+    <div>
+      <h3 className="text-xl font-bold mb-5 text-gray-800">大运</h3>
+      <div className="overflow-hidden">
+        <div className="flex space-x-4 overflow-x-auto pb-4 -mx-2 px-2 snap-x snap-mandatory">
+          {dayunList.map((dayun) => (
+            <div key={dayun.id} className="snap-start">
+              <PillarCard
+                item={dayun}
+                isSelected={selectedDayun?.id === dayun.id}
+                onClick={() => handleDayunClick(dayun)}
+                isDaYun={true}
+                activeLiunianInDayun={selectedLiunian} 
+              />
+            </div>
+          ))}
+        </div>
       </div>
       
       {selectedDayun && selectedDayun.liunian && selectedDayun.liunian.length > 0 && (
-        <div className="border-t border-gray-200 pt-4 mt-2">
-           <h4 className="font-semibold mb-3 text-gray-700 px-2">
-             {selectedDayun.id === 'qyq' ? '起运前' : '大运'}流年
-           </h4>
-          <div className="flex space-x-3 overflow-x-auto pb-3 px-2">
-            {selectedDayun.liunian.map((liunian) => (
-              <PillarCard
-                key={liunian.id}
-                item={liunian}
-                isSelected={selectedLiunian?.id === liunian.id}
-                onClick={() => handleLiunianClick(liunian)}
-              />
-            ))}
+        <div className="mt-6">
+          <h4 className="text-lg font-semibold mb-4 text-gray-700">
+            {selectedDayun.id === 'qyq' ? '起运前' : '大运'}流年
+          </h4>
+          <div className="overflow-hidden">
+            <div className="flex space-x-4 overflow-x-auto pb-4 -mx-2 px-2 snap-x snap-mandatory">
+              {selectedDayun.liunian.map((liunian) => (
+                <div key={liunian.id} className="snap-start">
+                  <PillarCard
+                    item={liunian}
+                    isSelected={selectedLiunian?.id === liunian.id}
+                    onClick={() => handleLiunianClick(liunian)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}

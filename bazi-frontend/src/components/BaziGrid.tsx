@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { OriginalPillar, DaYunPillar, LiuNianPillar, Relation, Gan, Zhi } from '../types/bazi';
+import { OriginalPillar, DaYunPillar, LiuNianPillar, Relation, Gan, Zhi, XiaoYun } from '../types/bazi';
 import PillarDisplay from './PillarDisplay';
 
 // 定义组件属性
@@ -23,6 +23,16 @@ interface ElementPosition {
   width: number;
   height: number;
 }
+
+// 判断是否为DaYunPillar类型
+const isDaYunPillar = (pillar: DaYunPillar | XiaoYun | null): pillar is DaYunPillar => {
+  return pillar !== null && 'start_year' in pillar;
+};
+
+// 判断是否为XiaoYun类型
+const isXiaoYun = (pillar: DaYunPillar | XiaoYun | null): pillar is XiaoYun => {
+  return pillar !== null && !('start_year' in pillar) && 'gan' in pillar && 'zhi' in pillar;
+};
 
 export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGridProps) {
   // 创建对各元素位置的引用
@@ -114,7 +124,6 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
             <text
               x={(points[0].x + points[1].x) / 2}
               y={(points[0].y + points[1].y) / 2 - 10}
-              fill="#4f46e5"
               fontSize="12"
               textAnchor="middle"
               dominantBaseline="middle"
@@ -127,7 +136,6 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       }
       
       // 如果有多个点，创建折线或曲线
-      // 这里简化处理，可以进一步优化
       const path = points.map((p, i) => {
         return `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`;
       }).join(' ');
@@ -148,7 +156,6 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
           <text
             x={midPoint.x}
             y={midPoint.y}
-            fill="#4f46e5"
             fontSize="12"
             textAnchor="middle"
             dominantBaseline="middle"
@@ -171,8 +178,8 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
     return [...new Set([...ganShensha, ...zhiShensha, ...pillarShensha])];
   };
 
-  // 大运的神煞信息
-  const getDayunShensha = (dayun: DaYunPillar) => {
+  // 大运或小运的神煞信息
+  const getDayunShensha = (dayun: DaYunPillar | XiaoYun | null) => {
     if (!dayun) return [];
     
     const ganShensha = dayun.gan?.shensha || [];
@@ -199,34 +206,34 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
   return (
     <div ref={gridRef} className="relative pb-6">
       {/* 头部标题行 */}
-      <div className={`${gridClass} mb-6`}>
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center py-4">
-          <div className="text-white font-semibold text-sm">类别</div>
+      <div className={`${gridClass} mb-8`}>
+        <div className="bg-primary/10 backdrop-blur-md flex items-center justify-center py-4 rounded-l-xl border border-r-0 border-gray-200">
+          <div className="text-primary font-semibold text-sm">类别</div>
         </div>
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700">
+        <div className="bg-primary/10 backdrop-blur-md border-t border-b border-gray-200">
           <div className="grid grid-cols-4 gap-0 h-full">
-            <div className="flex items-center justify-center py-4 border-r border-blue-500/30">
-              <div className="text-white font-semibold text-sm">年柱</div>
+            <div className="flex items-center justify-center py-4 border-r border-gray-200/50">
+              <div className="text-primary font-semibold text-sm">年柱</div>
             </div>
-            <div className="flex items-center justify-center py-4 border-r border-blue-500/30">
-              <div className="text-white font-semibold text-sm">月柱</div>
+            <div className="flex items-center justify-center py-4 border-r border-gray-200/50">
+              <div className="text-primary font-semibold text-sm">月柱</div>
             </div>
-            <div className="flex items-center justify-center py-4 border-r border-blue-500/30">
-              <div className="text-white font-semibold text-sm">日柱</div>
+            <div className="flex items-center justify-center py-4 border-r border-gray-200/50">
+              <div className="text-primary font-semibold text-sm">日柱</div>
             </div>
             <div className="flex items-center justify-center py-4">
-              <div className="text-white font-semibold text-sm">时柱</div>
+              <div className="text-primary font-semibold text-sm">时柱</div>
             </div>
           </div>
         </div>
-        <div className="bg-white"></div>
-        <div className="bg-gradient-to-r from-purple-600 to-purple-700">
+        <div className="bg-white border-t border-b border-gray-200"></div>
+        <div className="bg-secondary/10 backdrop-blur-md border-t border-b border-r border-gray-200 rounded-r-xl">
           <div className="grid grid-cols-2 gap-0 h-full">
-            <div className="flex items-center justify-center py-4 border-r border-purple-500/30">
-              <div className="text-white font-semibold text-sm">大运</div>
+            <div className="flex items-center justify-center py-4 border-r border-gray-200/50">
+              <div className="text-secondary font-semibold text-sm">大运</div>
             </div>
             <div className="flex items-center justify-center py-4">
-              <div className="text-white font-semibold text-sm">流年</div>
+              <div className="text-secondary font-semibold text-sm">流年</div>
             </div>
           </div>
         </div>
@@ -240,7 +247,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       </div>
       
       {/* 十神行 */}
-      <div className={`${gridClass} mb-4 py-3 bg-blue-50/60 border border-blue-100/50 rounded-xl shadow-sm`}>
+      <div className={`${gridClass} mb-4 py-3 glass-card`}>
         <div className="flex items-center justify-center px-3">
           <div className="font-medium text-gray-700 text-[13px] tracking-wide">十神</div>
         </div>
@@ -286,7 +293,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       </div>
       
       {/* 天干行 */}
-      <div className={`${gridClass} mb-4 py-3`}>
+      <div className={`${gridClass} mb-4 py-3 glass-card`}>
         <div className="flex items-center justify-center px-3">
           <div className="font-medium text-gray-700 text-[13px] tracking-wide">天干</div>
         </div>
@@ -332,7 +339,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       </div>
       
       {/* 地支行 */}
-      <div className={`${gridClass} mb-4 py-3`}>
+      <div className={`${gridClass} mb-4 py-3 glass-card`}>
         <div className="flex items-center justify-center px-3">
           <div className="font-medium text-gray-700 text-[13px] tracking-wide">地支</div>
         </div>
@@ -378,47 +385,63 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       </div>
       
       {/* 藏干行 */}
-      <div className={`${gridClass} mb-4 py-3 bg-gray-50/80 rounded-lg`}>
+      <div className={`${gridClass} mb-4 py-3 glass-card`}>
         <div className="flex items-center justify-center px-3">
           <div className="font-medium text-gray-700 text-[13px] tracking-wide">藏干</div>
         </div>
         <div className="grid grid-cols-4 gap-0">
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-700">
-              {pillars.year.zhi.canggan.map((cg, idx) => (
+              {pillars.year.zhi.canggan.map((cg: any, idx: number) => (
                 <div key={idx}>
-                  <span className="font-bold">{cg.gan}</span>
-                  <span className="text-gray-500">({cg.shishen})</span>
+                  <span className={`font-bold ${cg.gan.includes('甲') || cg.gan.includes('乙') ? 'element-wood' :
+                    cg.gan.includes('丙') || cg.gan.includes('丁') ? 'element-fire' :
+                    cg.gan.includes('戊') || cg.gan.includes('己') ? 'element-earth' :
+                    cg.gan.includes('庚') || cg.gan.includes('辛') ? 'element-metal' :
+                    'element-water'}`}>{cg.gan}</span>
+                  <span className="text-gray-500 ml-1">({cg.shishen})</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-700">
-              {pillars.month.zhi.canggan.map((cg, idx) => (
+              {pillars.month.zhi.canggan.map((cg: any, idx: number) => (
                 <div key={idx}>
-                  <span className="font-bold">{cg.gan}</span>
-                  <span className="text-gray-500">({cg.shishen})</span>
+                  <span className={`font-bold ${cg.gan.includes('甲') || cg.gan.includes('乙') ? 'element-wood' :
+                    cg.gan.includes('丙') || cg.gan.includes('丁') ? 'element-fire' :
+                    cg.gan.includes('戊') || cg.gan.includes('己') ? 'element-earth' :
+                    cg.gan.includes('庚') || cg.gan.includes('辛') ? 'element-metal' :
+                    'element-water'}`}>{cg.gan}</span>
+                  <span className="text-gray-500 ml-1">({cg.shishen})</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-700">
-              {pillars.day.zhi.canggan.map((cg, idx) => (
+              {pillars.day.zhi.canggan.map((cg: any, idx: number) => (
                 <div key={idx}>
-                  <span className="font-bold">{cg.gan}</span>
-                  <span className="text-gray-500">({cg.shishen})</span>
+                  <span className={`font-bold ${cg.gan.includes('甲') || cg.gan.includes('乙') ? 'element-wood' :
+                    cg.gan.includes('丙') || cg.gan.includes('丁') ? 'element-fire' :
+                    cg.gan.includes('戊') || cg.gan.includes('己') ? 'element-earth' :
+                    cg.gan.includes('庚') || cg.gan.includes('辛') ? 'element-metal' :
+                    'element-water'}`}>{cg.gan}</span>
+                  <span className="text-gray-500 ml-1">({cg.shishen})</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-700">
-              {pillars.hour.zhi.canggan.map((cg, idx) => (
+              {pillars.hour.zhi.canggan.map((cg: any, idx: number) => (
                 <div key={idx}>
-                  <span className="font-bold">{cg.gan}</span>
-                  <span className="text-gray-500">({cg.shishen})</span>
+                  <span className={`font-bold ${cg.gan.includes('甲') || cg.gan.includes('乙') ? 'element-wood' :
+                    cg.gan.includes('丙') || cg.gan.includes('丁') ? 'element-fire' :
+                    cg.gan.includes('戊') || cg.gan.includes('己') ? 'element-earth' :
+                    cg.gan.includes('庚') || cg.gan.includes('辛') ? 'element-metal' :
+                    'element-water'}`}>{cg.gan}</span>
+                  <span className="text-gray-500 ml-1">({cg.shishen})</span>
                 </div>
               ))}
             </div>
@@ -429,10 +452,14 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
           {dayun && dayun.zhi && (
             <div className="flex items-center justify-center px-3 py-2">
               <div className="text-center text-[11px] leading-relaxed text-gray-700">
-                {dayun.zhi.canggan.map((cg, idx) => (
+                {dayun.zhi.canggan.map((cg: any, idx: number) => (
                   <div key={idx}>
-                    <span className="font-bold">{cg.gan}</span>
-                    <span className="text-gray-500">({cg.shishen})</span>
+                    <span className={`font-bold ${cg.gan.includes('甲') || cg.gan.includes('乙') ? 'element-wood' :
+                      cg.gan.includes('丙') || cg.gan.includes('丁') ? 'element-fire' :
+                      cg.gan.includes('戊') || cg.gan.includes('己') ? 'element-earth' :
+                      cg.gan.includes('庚') || cg.gan.includes('辛') ? 'element-metal' :
+                      'element-water'}`}>{cg.gan}</span>
+                    <span className="text-gray-500 ml-1">({cg.shishen})</span>
                   </div>
                 ))}
               </div>
@@ -441,10 +468,14 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
           {liunian && (
             <div className="flex items-center justify-center px-3 py-2">
               <div className="text-center text-[11px] leading-relaxed text-gray-700">
-                {liunian.zhi.canggan.map((cg, idx) => (
+                {liunian.zhi.canggan.map((cg: any, idx: number) => (
                   <div key={idx}>
-                    <span className="font-bold">{cg.gan}</span>
-                    <span className="text-gray-500">({cg.shishen})</span>
+                    <span className={`font-bold ${cg.gan.includes('甲') || cg.gan.includes('乙') ? 'element-wood' :
+                      cg.gan.includes('丙') || cg.gan.includes('丁') ? 'element-fire' :
+                      cg.gan.includes('戊') || cg.gan.includes('己') ? 'element-earth' :
+                      cg.gan.includes('庚') || cg.gan.includes('辛') ? 'element-metal' :
+                      'element-water'}`}>{cg.gan}</span>
+                    <span className="text-gray-500 ml-1">({cg.shishen})</span>
                   </div>
                 ))}
               </div>
@@ -454,28 +485,28 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       </div>
       
       {/* 纳音行 */}
-      <div className={`${gridClass} mb-4 py-3`}>
+      <div className={`${gridClass} mb-4 py-3 glass-card`}>
         <div className="flex items-center justify-center px-3">
           <div className="font-medium text-gray-700 text-[13px] tracking-wide">纳音</div>
         </div>
         <div className="grid grid-cols-4 gap-0">
           <div className="flex items-center justify-center px-3 py-2">
-            <div className="text-center text-[12px] text-gray-500 font-medium">
+            <div className="text-center text-[12px] text-gray-600 font-medium">
               {pillars.year.nayin}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
-            <div className="text-center text-[12px] text-gray-500 font-medium">
+            <div className="text-center text-[12px] text-gray-600 font-medium">
               {pillars.month.nayin}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
-            <div className="text-center text-[12px] text-gray-500 font-medium">
+            <div className="text-center text-[12px] text-gray-600 font-medium">
               {pillars.day.nayin}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
-            <div className="text-center text-[12px] text-gray-500 font-medium">
+            <div className="text-center text-[12px] text-gray-600 font-medium">
               {pillars.hour.nayin}
             </div>
           </div>
@@ -484,14 +515,14 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
         <div className="grid grid-cols-2 gap-0">
           {dayun && (
             <div className="flex items-center justify-center px-3 py-2">
-              <div className="text-center text-[12px] text-gray-500 font-medium">
+              <div className="text-center text-[12px] text-gray-600 font-medium">
                 {dayun.nayin}
               </div>
             </div>
           )}
           {liunian && (
             <div className="flex items-center justify-center px-3 py-2">
-              <div className="text-center text-[12px] text-gray-500 font-medium">
+              <div className="text-center text-[12px] text-gray-600 font-medium">
                 {liunian.nayin}
               </div>
             </div>
@@ -500,7 +531,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
       </div>
       
       {/* 神煞行 */}
-      <div className={`${gridClass} mb-4 py-3 bg-gray-50/80 rounded-lg`}>
+      <div className={`${gridClass} mb-4 py-3 glass-card`}>
         <div className="flex items-center justify-center px-3">
           <div className="font-medium text-gray-700 text-[13px] tracking-wide">神煞</div>
         </div>
@@ -508,28 +539,28 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-600">
               {getAllShensha(pillars.year).map((shensha, index) => (
-                <div key={index} className="mb-1">{shensha}</div>
+                <div key={index} className="mb-1 px-1.5 py-0.5 rounded-sm bg-primary/5">{shensha}</div>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-600">
               {getAllShensha(pillars.month).map((shensha, index) => (
-                <div key={index} className="mb-1">{shensha}</div>
+                <div key={index} className="mb-1 px-1.5 py-0.5 rounded-sm bg-primary/5">{shensha}</div>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-600">
               {getAllShensha(pillars.day).map((shensha, index) => (
-                <div key={index} className="mb-1">{shensha}</div>
+                <div key={index} className="mb-1 px-1.5 py-0.5 rounded-sm bg-primary/5">{shensha}</div>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center px-3 py-2">
             <div className="text-center text-[11px] leading-relaxed text-gray-600">
               {getAllShensha(pillars.hour).map((shensha, index) => (
-                <div key={index} className="mb-1">{shensha}</div>
+                <div key={index} className="mb-1 px-1.5 py-0.5 rounded-sm bg-primary/5">{shensha}</div>
               ))}
             </div>
           </div>
@@ -540,7 +571,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
             <div className="flex items-center justify-center px-3 py-2">
               <div className="text-center text-[11px] leading-relaxed text-gray-600">
                 {getDayunShensha(dayun).map((shensha, index) => (
-                  <div key={index} className="mb-1">{shensha}</div>
+                  <div key={index} className="mb-1 px-1.5 py-0.5 rounded-sm bg-primary/5">{shensha}</div>
                 ))}
               </div>
             </div>
@@ -549,7 +580,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
             <div className="flex items-center justify-center px-3 py-2">
               <div className="text-center text-[11px] leading-relaxed text-gray-600">
                 {getLiunianShensha(liunian).map((shensha, index) => (
-                  <div key={index} className="mb-1">{shensha}</div>
+                  <div key={index} className="mb-1 px-1.5 py-0.5 rounded-sm bg-primary/5">{shensha}</div>
                 ))}
               </div>
             </div>
