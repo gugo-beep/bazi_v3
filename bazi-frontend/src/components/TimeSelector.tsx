@@ -1,5 +1,3 @@
-// TimeSelector.tsx
-
 import React from 'react';
 import { DaYunPillar, LiuNianPillar } from '../types/bazi';
 
@@ -25,14 +23,12 @@ const getElementClass = (value: string | null | undefined): string => {
 };
 
 
-
 // 可重用的卡片组件
 const PillarCard = ({
   item,
   isSelected,
   onClick,
   isDaYun,
-
   activeLiunianInDayun,
 }: {
   item: DaYunPillar | LiuNianPillar;
@@ -49,48 +45,44 @@ const PillarCard = ({
 
   const isDayunType = (i: any): i is DaYunPillar => isDaYun || 'start_year' in i;
 
-  // --- 逻辑修改开始 ---
   if (isDayunType(item) && item.id === 'qyq') {
-    // Case 1: "起运前" 大运卡片
     cardTitle = "起运前";
     let targetLiunian: LiuNianPillar | undefined | null = null;
 
     if (isSelected) {
-      // 如果"起运前"卡片是当前选中的大运，则其显示应同步当前选中的流年
       targetLiunian = activeLiunianInDayun;
     } else {
-      // 如果"起运前"卡片不是当前选中的大运，则应始终显示其列表中的第一个流年（即初始状态）
       targetLiunian = item.liunian && item.liunian[0];
     }
     
     if (targetLiunian) {
       age = targetLiunian.age;
-      // 从新的、结构完整的 xiaoYun 对象中获取干支
       if (targetLiunian.xiaoYun && targetLiunian.xiaoYun.gan && targetLiunian.xiaoYun.zhi) {
         gan = targetLiunian.xiaoYun.gan.value;
         zhi = targetLiunian.xiaoYun.zhi.value;
       }
     }
   } else if (isDayunType(item)) {
-    // Case 2: 正常大运卡片
     cardTitle = `${item.start_year}-${item.end_year}`;
     year = item.start_year;
     age = item.start_age;
     gan = item.gan?.value;
     zhi = item.zhi?.value;
   } else {
-    // Case 3: 流年卡片（逻辑不变）
     const liunian = item as LiuNianPillar;
     year = liunian.year;
     age = liunian.age;
     gan = liunian.gan.value;
     zhi = liunian.zhi.value;
   }
-  // --- 逻辑修改结束 ---
   
   const selectionClass = isSelected 
     ? (isDaYun ? 'border-indigo-500 bg-indigo-50 shadow-md' : 'border-purple-500 bg-purple-50')
     : 'border-gray-200 bg-gray-50 hover:border-gray-400';
+
+  // --- 修改：应用五行颜色 ---
+  const ganClass = gan ? getElementClass(gan) : 'text-transparent';
+  const zhiClass = zhi ? getElementClass(zhi) : 'text-transparent';
 
   return (
     <div
@@ -99,8 +91,8 @@ const PillarCard = ({
     >
       <div className="text-sm font-semibold text-gray-600">{cardTitle || year}</div>
       <div className="text-xs text-gray-400 my-1">{age}岁</div>
-      <div className={`font-bold text-2xl ${gan ? 'text-slate-700' : 'text-transparent'}`}>{gan || '-'}</div>
-      <div className={`font-bold text-2xl ${zhi ? 'text-slate-700' : 'text-transparent'}`}>{zhi || '-'}</div>
+      <div className={`font-bold text-2xl ${ganClass}`}>{gan || '-'}</div>
+      <div className={`font-bold text-2xl ${zhiClass}`}>{zhi || '-'}</div>
     </div>
   );
 };
