@@ -7,7 +7,7 @@ describe('八字服务测试套件', () => {
 
   // 在所有测试运行前，只生成一次profile，提高效率
   beforeAll(() => {
-    profile = generateBaziProfile('2004-03-03 04:15', '女');
+    profile = generateBaziProfile('2002-09-20 08:15', '女');
   });
 
   describe('generateBaziProfile 基本功能', () => {

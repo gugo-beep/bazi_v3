@@ -186,7 +186,7 @@ function calculateShensha(context) {
                     element.shensha.push(name);
                 }
             }
-            break;
+        
         }
     }
 }
