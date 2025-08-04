@@ -33,6 +33,8 @@ function createCalculationContext(baziProfile, gender) {
     if (p.nayin) {
       flatMap.set(`${prefix}NaYin`, p.nayin);
     }
+    if (p.value) {
+      flatMap.set(`${prefix}Pillar`, p.value);}
   };
 
   // 1. 处理原局

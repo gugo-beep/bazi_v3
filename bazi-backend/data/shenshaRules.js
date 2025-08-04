@@ -775,12 +775,12 @@ const shenshaRules = [
         comment: '空亡',
         preconditions: [],
         rules: [
-          { trigger:{ on:['dayPillar'], value:['乙丑','丙寅','丁卯','戊辰','己巳','庚午','辛未','壬申','癸酉']}, judgment:{ on:['allZhi'], value:['戌','亥']}},
-          { trigger:{ on:['dayPillar'], value:['乙亥','丙子','丁丑','戊寅','己卯','庚辰','辛巳','壬午','癸未']}, judgment:{ on:['allZhi'], value:['申','酉']}},
-          { trigger:{ on:['dayPillar'], value:['乙酉','丙戌','丁亥','戊子','己丑','庚寅','辛卯','壬辰','癸巳']}, judgment:{ on:['allZhi'], value:['午','未']}},
-          { trigger:{ on:['dayPillar'], value:['乙未','丙申','丁酉','戊戌','己亥','庚子','辛丑','壬寅','癸卯']}, judgment:{ on:['allZhi'], value:['辰','巳']}},
-          { trigger:{ on:['dayPillar'], value:['乙巳','丙午','丁未','戊申','己酉','庚戌','辛亥','壬子','癸丑']}, judgment:{ on:['allZhi'], value:['寅','卯']}},
-          { trigger:{ on:['dayPillar'], value:['乙卯','丙辰','丁巳','戊午','己未','庚申','辛酉','壬戌','癸亥']}, judgment:{ on:['allZhi'], value:['子','丑']}}
+          { trigger:{ on:['dayPillar'], value:['甲子','乙丑','丙寅','丁卯','戊辰','己巳','庚午','辛未','壬申','癸酉']}, judgment:{ on:['allZhi'], value:['戌','亥']}},
+          { trigger:{ on:['dayPillar'], value:['甲戌','乙亥','丙子','丁丑','戊寅','己卯','庚辰','辛巳','壬午','癸未']}, judgment:{ on:['allZhi'], value:['申','酉']}},
+          { trigger:{ on:['dayPillar'], value:['甲申','乙酉','丙戌','丁亥','戊子','己丑','庚寅','辛卯','壬辰','癸巳']}, judgment:{ on:['allZhi'], value:['午','未']}},
+          { trigger:{ on:['dayPillar'], value:['甲午','乙未','丙申','丁酉','戊戌','己亥','庚子','辛丑','壬寅','癸卯']}, judgment:{ on:['allZhi'], value:['辰','巳']}},
+          { trigger:{ on:['dayPillar'], value:['甲辰','乙巳','丙午','丁未','戊申','己酉','庚戌','辛亥','壬子','癸丑']}, judgment:{ on:['allZhi'], value:['寅','卯']}},
+          { trigger:{ on:['dayPillar'], value:['甲寅','乙卯','丙辰','丁巳','戊午','己未','庚申','辛酉','壬戌','癸亥']}, judgment:{ on:['allZhi'], value:['子','丑']}}
       ]
     }
 ];

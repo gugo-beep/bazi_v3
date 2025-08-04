@@ -56,6 +56,7 @@ export const mockBaziData: BaziProfile = {
               "shensha": [
                 "天乙贵人",
                 "天医",
+                "华盖",
               ],
               "type": "小运支",
               "value": "丑",
@@ -84,6 +85,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -129,6 +131,8 @@ export const mockBaziData: BaziProfile = {
               "id": "xy0_1z",
               "shensha": [
                 "福星贵人",
+                "文昌贵人",
+                "将星",
               ],
               "type": "小运支",
               "value": "子",
@@ -147,7 +151,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -205,6 +211,8 @@ export const mockBaziData: BaziProfile = {
                 "绞煞",
                 "太极贵人",
                 "金舆",
+                "驿马",
+                "亡神",
                 "孤辰",
               ],
               "type": "小运支",
@@ -317,6 +325,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -364,7 +374,9 @@ export const mockBaziData: BaziProfile = {
               "shensha": [
                 "将星",
                 "禄神",
+                "咸池",
                 "红艳",
+                "空亡",
               ],
               "type": "小运支",
               "value": "酉",
@@ -382,6 +394,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln0_4z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -436,6 +450,7 @@ export const mockBaziData: BaziProfile = {
               "shensha": [
                 "羊刃",
                 "亡神",
+                "空亡",
               ],
               "type": "小运支",
               "value": "申",
@@ -464,6 +479,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -549,6 +565,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -669,7 +686,9 @@ export const mockBaziData: BaziProfile = {
               ],
               "id": "xy0_8z",
               "shensha": [
+                "福星贵人",
                 "文昌贵人",
+                "国印贵人",
                 "劫煞",
               ],
               "type": "小运支",
@@ -762,7 +781,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln1_0z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -891,6 +912,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -927,7 +949,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -1012,6 +1036,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -1045,6 +1071,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln1_7z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -1088,6 +1116,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -1132,6 +1161,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -1166,6 +1196,7 @@ export const mockBaziData: BaziProfile = {
         "shensha": [
           "天乙贵人",
           "天医",
+          "华盖",
         ],
         "type": "大运支",
         "value": "丑",
@@ -1297,7 +1328,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln2_2z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -1431,6 +1464,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -1464,7 +1498,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -1547,6 +1583,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -1580,6 +1618,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln2_9z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -1603,6 +1643,8 @@ export const mockBaziData: BaziProfile = {
         "id": "dy2z",
         "shensha": [
           "福星贵人",
+          "文昌贵人",
+          "将星",
         ],
         "type": "大运支",
         "value": "子",
@@ -1661,6 +1703,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -1705,6 +1748,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -1829,7 +1873,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln3_4z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -1957,6 +2003,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -1990,7 +2037,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -2064,6 +2113,8 @@ export const mockBaziData: BaziProfile = {
           "绞煞",
           "太极贵人",
           "金舆",
+          "驿马",
+          "亡神",
           "孤辰",
         ],
         "type": "大运支",
@@ -2118,6 +2169,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -2151,6 +2204,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln4_1z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -2194,6 +2249,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -2241,6 +2297,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -2364,7 +2421,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln4_6z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -2490,6 +2549,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -2569,7 +2629,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -2652,6 +2714,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -2688,6 +2752,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln5_3z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -2734,6 +2800,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -2780,6 +2847,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -2898,7 +2966,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln5_8z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -2962,7 +3032,9 @@ export const mockBaziData: BaziProfile = {
         "shensha": [
           "将星",
           "禄神",
+          "咸池",
           "红艳",
+          "空亡",
         ],
         "type": "大运支",
         "value": "酉",
@@ -3062,6 +3134,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -3095,7 +3168,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -3184,6 +3259,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -3219,6 +3296,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln6_5z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -3262,6 +3341,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -3306,6 +3386,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -3417,6 +3498,7 @@ export const mockBaziData: BaziProfile = {
         "shensha": [
           "羊刃",
           "亡神",
+          "空亡",
         ],
         "type": "大运支",
         "value": "申",
@@ -3471,7 +3553,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln7_0z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -3600,6 +3684,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -3636,7 +3721,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -3721,6 +3808,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -3754,6 +3843,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln7_7z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -3797,6 +3888,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -3841,6 +3933,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -4008,7 +4101,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln8_2z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -4142,6 +4237,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -4175,7 +4271,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -4258,6 +4356,8 @@ export const mockBaziData: BaziProfile = {
               "绞煞",
               "太极贵人",
               "金舆",
+              "驿马",
+              "亡神",
               "孤辰",
             ],
             "type": "流年支",
@@ -4291,6 +4391,8 @@ export const mockBaziData: BaziProfile = {
             "id": "ln8_9z",
             "shensha": [
               "福星贵人",
+              "文昌贵人",
+              "将星",
             ],
             "type": "流年支",
             "value": "子",
@@ -4379,6 +4481,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "天乙贵人",
               "天医",
+              "华盖",
             ],
             "type": "流年支",
             "value": "丑",
@@ -4423,6 +4526,7 @@ export const mockBaziData: BaziProfile = {
               "太极贵人",
               "福星贵人",
               "驿马",
+              "劫煞",
             ],
             "type": "流年支",
             "value": "寅",
@@ -4547,7 +4651,9 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln9_4z",
             "shensha": [
+              "福星贵人",
               "文昌贵人",
+              "国印贵人",
               "劫煞",
             ],
             "type": "流年支",
@@ -4675,6 +4781,7 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "羊刃",
               "亡神",
+              "空亡",
             ],
             "type": "流年支",
             "value": "申",
@@ -4708,7 +4815,9 @@ export const mockBaziData: BaziProfile = {
             "shensha": [
               "将星",
               "禄神",
+              "咸池",
               "红艳",
+              "空亡",
             ],
             "type": "流年支",
             "value": "酉",
@@ -4783,7 +4892,9 @@ export const mockBaziData: BaziProfile = {
         ],
         "id": "dy9z",
         "shensha": [
+          "福星贵人",
           "文昌贵人",
+          "国印贵人",
           "劫煞",
         ],
         "type": "大运支",
@@ -4802,7 +4913,9 @@ export const mockBaziData: BaziProfile = {
       },
       "id": "dp",
       "nayin": "白蜡金",
-      "shensha": [],
+      "shensha": [
+        "十恶大败",
+      ],
       "type": "日柱",
       "value": "辛巳",
       "zhi": {
@@ -4825,8 +4938,11 @@ export const mockBaziData: BaziProfile = {
         ],
         "id": "dz",
         "shensha": [
+          "福星贵人",
           "文昌贵人",
+          "国印贵人",
           "劫煞",
+          "地网",
         ],
         "type": "日支",
         "value": "巳",
@@ -4869,6 +4985,7 @@ export const mockBaziData: BaziProfile = {
           "太极贵人",
           "福星贵人",
           "驿马",
+          "劫煞",
         ],
         "type": "时支",
         "value": "寅",
@@ -4913,6 +5030,7 @@ export const mockBaziData: BaziProfile = {
           "太极贵人",
           "福星贵人",
           "驿马",
+          "劫煞",
         ],
         "type": "月支",
         "value": "寅",
@@ -4953,6 +5071,7 @@ export const mockBaziData: BaziProfile = {
         "shensha": [
           "羊刃",
           "亡神",
+          "空亡",
         ],
         "type": "年支",
         "value": "申",
@@ -4962,7 +5081,7 @@ export const mockBaziData: BaziProfile = {
   "profile": {
     "dayMaster": "辛",
     "gender": "女",
-    "gregorianDate": "2004-03-03 04:15",
+    "gregorianDate": "2004-03-03 04:18",
   },
   "relations": [
     {

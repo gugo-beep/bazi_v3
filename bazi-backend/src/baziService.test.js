@@ -1,3 +1,6 @@
+//后端jest快照运行，只需cd D:\MYWORK\everydaywork\250703\BA_ZI_V3\bazi-backend
+//然后运行npm test（记得删除原先的__snapshots__文件夹，生成的结果新的文件夹）
+//测试结果放到bazi-frontend\src\app\mock-bazi-data.ts，可以用前端UI查看结果
 // NEW: 导入刑冲合害计算器，因为集成测试需要它
 import { calculateHarmRelations } from './harmCalculator.js';
 import { generateBaziProfile } from './baziService.js';
@@ -7,7 +10,7 @@ describe('八字服务测试套件', () => {
 
   // 在所有测试运行前，只生成一次profile，提高效率
   beforeAll(() => {
-    profile = generateBaziProfile('2002-09-20 08:15', '女');
+    profile = generateBaziProfile('2004-03-03 04:18', '女');
   });
 
   describe('generateBaziProfile 基本功能', () => {
