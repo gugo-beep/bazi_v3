@@ -8,7 +8,7 @@ describe('八字服务测试套件', () => {
   // 在所有测试运行前，只生成一次profile，提高效率
   beforeAll(() => {
     // MODIFIED: 增加了测试日期，确保与之前的快照一致
-    profile = generateBaziProfile('1921-06-22 01:18', '男');
+    profile = generateBaziProfile('2002-09-20 08:18', '女');
   });
 
   describe('generateBaziProfile 基本功能', () => {

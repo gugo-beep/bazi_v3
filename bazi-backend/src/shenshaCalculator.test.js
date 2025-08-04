@@ -1,92 +1,67 @@
-// 1. 定义模拟的神煞规则，使测试独立于外部文件
+import { jest } from '@jest/globals';
+
+// 1. 定义一个全新的、更强大的模拟神煞规则集
 const mockShenshaRules = [
+    // --- 测试场景 1: 带复杂前提条件和分支的神煞 (模拟“绞煞”) ---
     {
-        name: '天乙贵人',
-        preconditions: [
-            { on: 'dayGan', value: ['甲', '戊'] }
-        ],
-        rules: [
-            {
-                trigger: { on: 'yearZhi', value: ['丑', '未'] },
-                judgment: { on: 'allZhi', value: ['丑', '未'], exclude_trigger: false }
-            }
-        ]
-    },
-    {
-        name: '桃花',
-        rules: [ // 无前提条件
-            {
-                trigger: { on: 'yearZhi', value: ['寅', '午', '戌'] },
-                judgment: { on: 'allZhi', value: ['卯'] }
-            },
-            {
-                trigger: { on: 'dayZhi', value: ['申', '子', '辰'] },
-                judgment: { on: 'allZhi', value: ['酉'] }
-            }
-        ]
-    },
-    {
-        name: '国印贵人', // 用于测试分支逻辑
+        name: '模拟绞煞',
         branches: [
             {
-                preconditions: [{ on: 'dayGan', value: ['甲'] }],
-                rules: [{
-                    trigger: { on: 'yearZhi', value: ['戌'] },
-                    judgment: { on: 'allZhi', value: ['戌'] }
-                }]
-            },
-            {
-                preconditions: [{ on: 'dayGan', value: ['乙'] }],
-                rules: [{
-                    trigger: { on: 'yearZhi', value: ['亥'] },
-                    judgment: { on: 'allZhi', value: ['亥'] }
-                }]
+                preconditions: {
+                    logic: 'or',
+                    groups: [
+                        [{ on: 'gender', value: ['女'] }, { on: 'dayGan', value: ['辛'] }], // 阴女
+                        [{ on: 'gender', value: ['男'] }, { on: 'dayGan', value: ['庚'] }]  // 阳男
+                    ]
+                },
+                rules: [{ trigger: { on: 'yearZhi', value: ['申'] }, judgment: { on: 'allZhi', value: ['巳'] } }]
             }
+        ]
+    },
+    // --- 测试场景 2: 带 allPillar 判断的神煞 (模拟“魁罡”) ---
+    {
+        name: '模拟魁罡',
+        rules: [
+            { trigger: { on: ['dayPillar'], value: ['庚辰'] }, judgment: { on: 'allPillar', value: ['庚辰', '壬辰'] } }
+        ]
+    },
+    // --- 测试场景 3: 带普通前提条件和 exclude_trigger 的神煞 (模拟“华盖”) ---
+    {
+        name: '模拟华盖',
+        rules: [
+            { trigger: { on: ['dayZhi'], value: ['戌'] }, judgment: { on: 'allZhi', value: ['戌'], exclude_trigger: true } }
         ]
     }
 ];
 
 // 2. 模拟 shenshaRules.js 的导入
-import { jest } from '@jest/globals';
-jest.unstable_mockModule('../data/shenshaRules.js', () => {
-  return { default: mockShenshaRules }; // 返回包含default属性的对象
-});
+jest.unstable_mockModule('../data/shenshaRules.js', () => ({
+    default: mockShenshaRules,
+}));
 
 // 3. 在所有 mock 设置完毕后，导入我们要测试的模块
-let calculateShensha;
-beforeAll(async () => {
-  const module = await import('./shenshaCalculator.js');
-  calculateShensha = module.calculateShensha;
-});
+const { calculateShensha, findElementById } = await import('./shenshaCalculator.js');
+
 
 /**
- * 辅助函数：创建一个基础的、可修改的模拟 context 对象
- * @param {Object} overrides - 用于覆盖默认值的对象
- * @returns {Object} 一个完整的模拟 context
+ * [最终修正版] 辅助函数：创建一个与 baziService 完全一致的模拟 context
  */
 const createMockContext = (overrides = {}) => {
-    // 这是一个基础的 baziProfile 结构，每个测试可以按需修改
-    // --- FIX: 将 nested pillars 结构移除，直接使用 Pillar 后缀 ---
     const baseProfile = {
-        yearPillar: { id: 'yp', value: '甲子', gan: { id: 'yg', value: '甲', shensha: [] }, zhi: { id: 'yz', value: '子', shensha: [] } },
-        monthPillar: { id: 'mp', value: '丙寅', gan: { id: 'mg', value: '丙', shensha: [] }, zhi: { id: 'mz', value: '寅', shensha: [] } },
-        dayPillar: { id: 'dp', value: '甲戌', gan: { id: 'dg', value: '甲', shensha: [] }, zhi: { id: 'dz', value: '戌', shensha: [] } },
-        hourPillar: { id: 'tp', value: '甲子', gan: { id: 'tg', value: '甲', shensha: [] }, zhi: { id: 'tz', value: '子', shensha: [] } },
+        yearPillar:  { id: 'yp', value: '甲申', gan: { id: 'yg', value: '甲', shensha: [] }, zhi: { id: 'yz', value: '申', shensha: [] }, shensha: [] },
+        monthPillar: { id: 'mp', value: '丙寅', gan: { id: 'mg', value: '丙', shensha: [] }, zhi: { id: 'mz', value: '寅', shensha: [] }, shensha: [] },
+        dayPillar:   { id: 'dp', value: '辛巳', gan: { id: 'dg', value: '辛', shensha: [] }, zhi: { id: 'dz', value: '巳', shensha: [] }, shensha: [] },
+        hourPillar:  { id: 'tp', value: '庚寅', gan: { id: 'tg', value: '庚', shensha: [] }, zhi: { id: 'tz', value: '寅', shensha: [] }, shensha: [] },
         dayun: []
     };
 
-    // 默认的 flatMap，可以被覆盖
     const baseFlatMap = new Map([
-        ['dayGan', '甲'],
-        ['yearZhi', '子'],
-        ['dayZhi', '戌'],
-        // --- FIX: 为Pillar和NaYin添加模拟数据 ---
-        ['dayPillar', '甲戌'], 
-        ['yearPillar', '甲子'],
-        ['monthPillar', '丙寅'],
-        ['hourPillar', '甲子'],
+        ['yearGan', '甲'], ['yearZhi', '申'], ['yearPillar', '甲申'],
+        ['monthGan', '丙'], ['monthZhi', '寅'], ['monthPillar', '丙寅'],
+        ['dayGan', '辛'], ['dayZhi', '巳'], ['dayPillar', '辛巳'],
+        ['hourGan', '庚'], ['hourZhi', '寅'], ['hourPillar', '庚寅'],
     ]);
-
+    
     // 合并覆盖值
     const finalProfile = { ...baseProfile, ...overrides.baziProfile };
     const finalFlatMap = new Map([...baseFlatMap, ...(overrides.flatMap || new Map())]);
@@ -94,79 +69,68 @@ const createMockContext = (overrides = {}) => {
     return {
         baziProfile: finalProfile,
         flatMap: finalFlatMap,
-        baziIndex: overrides.baziIndex || {},
-        gender: overrides.gender || '男',
+        baziIndex: overrides.baziIndex || { '巳': ['dz'], '申': ['yz'] },
+        gender: overrides.gender || '女',
     };
 };
 
+describe('神煞计算器 (shenshaCalculator) - 最终测试版', () => {
 
-
-describe('神煞计算器 (shenshaCalculator)', () => {
-
-    it('应该能正确处理带前提条件的神煞（天乙贵人）', () => {
-        // 准备数据: 日干为'甲'，年支为'丑'。满足天乙贵人的前提和触发条件
-        const mockContext = createMockContext({
-            flatMap: new Map([['dayGan', '甲'], ['yearZhi', '丑']]),
-            baziIndex: { '丑': ['yz'] }
-        });
-        mockContext.baziProfile.yearPillar.zhi.value = '丑';
-
-        // 执行计算
-        calculateShensha(mockContext);
-
-        // 断言: 年支的shensha数组应该包含'天乙贵人'
-        expect(mockContext.baziProfile.yearPillar.zhi.shensha).toContain('天乙贵人');
-    });
-
-    it('当不满足前提条件时，不应该计算神煞', () => {
-        // 准备数据: 日干为'乙'（不满足天乙贵人前提），年支为'丑'
-        const mockContext = createMockContext({
-            flatMap: new Map([['dayGan', '乙'], ['yearZhi', '丑']])
-        });
-
-        calculateShensha(mockContext);
-
-        // 断言: 年支的shensha数组应该是空的
-        expect(mockContext.baziProfile.yearPillar.zhi.shensha).toEqual([]);
-    });
-
-    it('应该能正确处理无前提条件的神煞（桃花）', () => {
-        // 准备数据: 年支为'寅'，月支为'卯'。满足桃花的触发条件
-        const mockContext = createMockContext({
-            flatMap: new Map([['yearZhi', '寅']]),
-            baziIndex: { '卯': ['mz'] } // 目标是月支'卯'
-        });
-        mockContext.baziProfile.yearPillar.zhi.value = '寅';
-        mockContext.baziProfile.monthPillar.zhi.value = '卯';
-
-        calculateShensha(mockContext);
+    it('应该能正确处理带复杂前提条件的“模拟绞煞”', () => {
+        // 条件: 女命, 日干为辛, 年支为申, 判断地支巳
+        const context = createMockContext({ gender: '女' });
         
-        // 断言: 月支的shensha数组应该包含'桃花'
-        expect(mockContext.baziProfile.monthPillar.zhi.shensha).toContain('桃花');
+        calculateShensha(context);
+
+        // 断言: 日支'巳'应该有'模拟绞煞'
+        expect(context.baziProfile.dayPillar.zhi.shensha).toContain('模拟绞煞');
     });
 
-    it('应该能正确处理分支逻辑（国印贵人）', () => {
-        // 场景1: 日干为'甲'，年支为'戌'
-        const context1 = createMockContext({
-            flatMap: new Map([['dayGan', '甲'], ['yearZhi', '戌']]),
-            baziIndex: { '戌': ['yz'] }
+    it('当不满足复杂前提条件时，不应该计算神煞', () => {
+        // 条件: 将性别改为'男'，不满足“阴女”或“阳男”的任何一个条件
+        const context = createMockContext({ gender: '男' });
+
+        calculateShensha(context);
+
+        // 断言: 所有神煞数组都应该是空的
+        expect(context.baziProfile.dayPillar.zhi.shensha).toEqual([]);
+    });
+
+    it('应该能正确处理 allPillar 判断', () => {
+        // 条件: 将日柱改为'庚辰'来触发规则
+        const context = createMockContext({
+            baziProfile: {
+                dayPillar: { id: 'dp', value: '庚辰', gan: { id: 'dg', value: '庚', shensha: [] }, zhi: { id: 'dz', value: '辰', shensha: [] }, shensha: [] }
+            },
+            flatMap: new Map([['dayPillar', '庚辰']]),
+            baziIndex: {}
         });
-        context1.baziProfile.yearPillar.zhi.value = '戌';
         
-        calculateShensha(context1);
-        // 断言: 年支应该有'国印贵人'
-        expect(context1.baziProfile.yearPillar.zhi.shensha).toContain('国印贵人');
+        // 为了让判断生效，我们在大运里也放一个'壬辰'
+        context.baziProfile.dayun.push({ id: 'dy1p', value: '壬辰', shensha: [] });
 
-        // 场景2: 日干为'乙'，年支为'亥'
-        const context2 = createMockContext({
-            flatMap: new Map([['dayGan', '乙'], ['yearZhi', '亥']]),
-            baziIndex: { '亥': ['yz'] }
+        calculateShensha(context);
+        
+        // 断言: 日柱和这个大运柱都应该有'模拟魁罡'
+        expect(context.baziProfile.dayPillar.shensha).toContain('模拟魁罡');
+        expect(context.baziProfile.dayun[0].shensha).toContain('模拟魁罡');
+    });
+
+    it('应该能正确处理 exclude_trigger', () => {
+        // 条件: 日支为戌，且八字中还有另一个戌（年支）
+        const context = createMockContext({
+            baziProfile: {
+                yearPillar: { id: 'yp', value: '甲戌', gan: { id: 'yg', value: '甲', shensha: [] }, zhi: { id: 'yz', value: '戌', shensha: [] }, shensha: [] },
+                dayPillar:  { id: 'dp', value: '庚戌', gan: { id: 'dg', value: '庚', shensha: [] }, zhi: { id: 'dz', value: '戌', shensha: [] }, shensha: [] }
+            },
+            flatMap: new Map([['dayZhi', '戌']]), // 由日支触发
+            baziIndex: { '戌': ['yz', 'dz'] }
         });
-        context2.baziProfile.dayPillar.gan.value = '乙';
-        context2.baziProfile.yearPillar.zhi.value = '亥';
+        
+        calculateShensha(context);
 
-        calculateShensha(context2);
-        // 断言: 年支也应该有'国印贵人'
-        expect(context2.baziProfile.yearPillar.zhi.shensha).toContain('国印贵人');
+        // 断言: 触发者(日支)不应有神煞，而另一个(年支)应该有
+        expect(context.baziProfile.dayPillar.zhi.shensha).not.toContain('模拟华盖');
+        expect(context.baziProfile.yearPillar.zhi.shensha).toContain('模拟华盖');
     });
 });
