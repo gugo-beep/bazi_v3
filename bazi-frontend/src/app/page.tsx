@@ -78,7 +78,7 @@ export default function Home() {
           <div className="mt-2 text-center text-sm text-gray-500">
             <span>{baziData.profile.gregorianDate}</span>
             <span className="mx-2">|</span>
-            <span>{baziData.profile.gender === 'male' ? '男' : '女'}</span>
+            <span>{baziData.profile.gender}</span>
             <span className="mx-2">|</span>
             <span>日主: <span className={`${baziData.profile.dayMaster.includes('甲') ? 'element-wood' : 
               baziData.profile.dayMaster.includes('乙') ? 'element-wood' :

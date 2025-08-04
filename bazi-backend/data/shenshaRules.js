@@ -460,10 +460,10 @@ const shenshaRules = [
         comment: '将星',
         preconditions: [],
         rules: [
-          { trigger:{ on:['yearZhi','dayZhi'], value:['巳','酉','丑']}, judgment:{ on:['allZhi'], value:['酉']}},
-          { trigger:{ on:['yearZhi','dayZhi'], value:['寅','午','戌']}, judgment:{ on:['allZhi'], value:['午']}},
-          { trigger:{ on:['yearZhi','dayZhi'], value:['亥','卯','未']}, judgment:{ on:['allZhi'], value:['卯']}},
-          { trigger:{ on:['yearZhi','dayZhi'], value:['申','子','辰']}, judgment:{ on:['allZhi'], value:['子']}}
+          { trigger:{ on:['yearZhi','dayZhi'], value:['巳','酉','丑']}, judgment:{ on:['allZhi'], value:['酉'], exclude_trigger: true }},
+          { trigger:{ on:['yearZhi','dayZhi'], value:['寅','午','戌']}, judgment:{ on:['allZhi'], value:['午'], exclude_trigger: true }},
+          { trigger:{ on:['yearZhi','dayZhi'], value:['亥','卯','未']}, judgment:{ on:['allZhi'], value:['卯'], exclude_trigger: true }},
+          { trigger:{ on:['yearZhi','dayZhi'], value:['申','子','辰']}, judgment:{ on:['allZhi'], value:['子'], exclude_trigger: true }}
       ]
     },
     {
