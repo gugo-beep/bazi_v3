@@ -76,7 +76,7 @@ export interface BaziProfile {
     gender: string;
     dayMaster: string;
   };
-  pillars: {
+  yuanju: {
     year: OriginalPillar;
     month: OriginalPillar;
     day: OriginalPillar;

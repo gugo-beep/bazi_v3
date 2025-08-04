@@ -3,25 +3,41 @@ import NA_YIN from '../data/NA_YIN.js';
 import SHI_SHEN_GAN from '../data/SHI_SHEN_GAN.js';
 import ZHI_HIDE_GAN from '../data/ZHI_HIDE_GAN.js';
 import { calculateHarmRelations } from './harmCalculator.js';
-import { calculateShensha } from './shenshaCalculator.js'; // 导入神煞计算器
+import { calculateShensha } from './shenshaCalculator.js';
 
 /**
- * MODIFIED: 创建包含 baziIndex 和 flatMap 的完整上下文
+ * [最终修正版] 创建一个用于所有计算的上下文对象
  * @param {Object} baziProfile - 包含四柱、大运等信息的完整排盘对象
  * @param {string} gender - 性别
  * @returns {Object} 完整的上下文对象
  */
 function createCalculationContext(baziProfile, gender) {
-  const baziIndex = {};
-  const flatMap = new Map();
-  
-  const addToIndex = (ganZhi, id) => {
-    if (!baziIndex[ganZhi]) baziIndex[ganZhi] = [];
-    baziIndex[ganZhi].push(id);
+  const baziIndex = {}; // 反向索引，用于快速查找
+  const flatMap = new Map(); // 正向速查表，用于快速读取
+
+  // 辅助函数：将干支及其ID添加到反向索引
+  const addToIndex = (value, id) => {
+    if (!baziIndex[value]) {
+      baziIndex[value] = [];
+    }
+    if (!baziIndex[value].includes(id)) {
+      baziIndex[value].push(id);
+    }
   };
 
+  /**
+   * [最终修正版] 核心处理函数：处理所有类型的“柱”对象
+   * @param {Object} p - 任何一个柱对象（原局、大运、流年、小运）
+   * @param {string} prefix - 用于 flatMap 的键前缀
+   */
   const processPillar = (p, prefix) => {
     if (!p) return;
+
+    // --- 关键修复：确保所有柱的完整干支值都被添加到 flatMap ---
+    if (p.value) {
+      flatMap.set(`${prefix}Pillar`, p.value);
+    }
+
     if (p.gan && p.gan.value) {
       addToIndex(p.gan.value, p.gan.id);
       flatMap.set(`${prefix}Gan`, p.gan.value);
@@ -33,45 +49,33 @@ function createCalculationContext(baziProfile, gender) {
     if (p.nayin) {
       flatMap.set(`${prefix}NaYin`, p.nayin);
     }
-    if (p.value) {
-      flatMap.set(`${prefix}Pillar`, p.value);}
   };
 
-  // 1. 处理原局
+  // 1. 处理原局四柱
   processPillar(baziProfile.yearPillar, 'year');
   processPillar(baziProfile.monthPillar, 'month');
   processPillar(baziProfile.dayPillar, 'day');
   processPillar(baziProfile.hourPillar, 'hour');
 
-  // 2. 处理大运和流年
-  baziProfile.dayun.forEach(d => {
-    processPillar(d, d.id); // 使用大运ID作为前缀
-    if (d.liunian) {
-        d.liunian.forEach(l => processPillar(l, l.id));
+  // 2. 遍历大运、流年、小运
+  baziProfile.dayun.forEach(dayun => {
+    processPillar(dayun, dayun.id); // 处理大运柱本身
+    if (dayun.liunian) {
+      dayun.liunian.forEach(liunian => {
+        processPillar(liunian, liunian.id); // 处理流年柱
+        if (liunian.xiaoYun) {
+          processPillar(liunian.xiaoYun, liunian.xiaoYun.id); // 处理小运柱
+        }
+      });
     }
   });
 
-  // 3. 处理小运 (现在拥有更丰富的对象结构)
-  const qiyunqian = baziProfile.dayun.find(d => d.id === 'qyq');
-  if (qiyunqian && qiyunqian.liunian) {
-    qiyunqian.liunian.forEach((liunian) => {
-      // 检查是否存在结构完整的小运对象及其干支
-      if (liunian.xiaoYun && liunian.xiaoYun.gan && liunian.xiaoYun.zhi) {
-        const xiaoYunGan = liunian.xiaoYun.gan;
-        const xiaoYunZhi = liunian.xiaoYun.zhi;
-
-        // 使用对象中预设的ID和value，注册到baziIndex中
-        addToIndex(xiaoYunGan.value, xiaoYunGan.id);
-        addToIndex(xiaoYunZhi.value, xiaoYunZhi.id);
-
-        // (可选但推荐) 将小运也添加到 flatMap 中，方便未来可能的直接查找
-        flatMap.set(`${liunian.xiaoYun.id}Gan`, xiaoYunGan.value);
-        flatMap.set(`${liunian.xiaoYun.id}Zhi`, xiaoYunZhi.value);
-      }
-    });
-  }
-  
-  return { baziProfile, baziIndex, flatMap, gender };
+  return {
+    baziProfile,
+    baziIndex,
+    flatMap,
+    gender,
+  };
 }
 
 
@@ -91,10 +95,10 @@ function generateBaziProfile(gregorianDate, gender) {
     dayun: generateDayun(eightChar, gender, dayPillar.gan.value)
   };
   
-  // MODIFIED: 传入 gender 以便 context 包含它
   const context = createCalculationContext(baziProfile, gender);
 
   const relations = calculateHarmRelations(context);
+  
   calculateShensha(context); // 调用神煞计算，直接修改context
 
   const finalOutput = {
@@ -103,7 +107,7 @@ function generateBaziProfile(gregorianDate, gender) {
       gender: gender,
       dayMaster: dayPillar.gan.value
     },
-    pillars: {
+    yuanju: {
       year: baziProfile.yearPillar,
       month: baziProfile.monthPillar,
       day: baziProfile.dayPillar,
@@ -117,7 +121,7 @@ function generateBaziProfile(gregorianDate, gender) {
 }
 
 // ... generateOriginalPillar, generateDayun, calculateCangGan 等函数保持不变 ...
-// (请保留您文件中这些函数的原样)
+// (您文件中这些函数的原样)
 
 function generateOriginalPillar(pillarType, eightChar) {
   let gan, zhi, shishenGan, nayin;
@@ -225,7 +229,7 @@ function generateDayun(eightChar, gender, dayGan) {
         const daYunGan = daYunGanZhi.substring(0, 1);
         const daYunZhi = daYunGanZhi.substring(1);
         const daYunPillar = {
-            id: `dy${i}p`, type: '大运', value: daYunGanZhi, nayin: NA_YIN[daYunGanZhi], shensha: [],
+            id: `dy${i}p`, type: '大运', value: daYunGanZhi, nayin: NA_YIN[daYunGanZhi], shensha: [], index: i,
             start_year: daYun.getStartYear(), end_year: daYun.getEndYear(), start_age: daYun.getStartAge(),
             gan: { id: `dy${i}g`, type: '大运干', value: daYunGan, shishen: ganInfoCache[daYunGan].shishen, shensha: [] },
             zhi: { id: `dy${i}z`, type: '大运支', value: daYunZhi, canggan: zhiInfoCache[daYunZhi].canggan, shensha: [] },
@@ -237,7 +241,7 @@ function generateDayun(eightChar, gender, dayGan) {
             const liuNianGan = liuNianGanZhi.substring(0, 1);
             const liuNianZhi = liuNianGanZhi.substring(1);
             daYunPillar.liunian.push({
-                id: `ln${i}_${j}p`, type: '流年', value: liuNianGanZhi, nayin: NA_YIN[liuNianGanZhi], shensha: [],
+                id: `ln${i}_${j}p`, type: '流年', value: liuNianGanZhi, nayin: NA_YIN[liuNianGanZhi], shensha: [], index:j,
                 year: liuNian.getYear(), age: liuNian.getAge(), xiaoYun: null,
                 gan: { id: `ln${i}_${j}g`, type: '流年干', value: liuNianGan, shishen: ganInfoCache[liuNianGan].shishen, shensha: [] },
                 zhi: { id: `ln${i}_${j}z`, type: '流年支', value: liuNianZhi, canggan: zhiInfoCache[liuNianZhi].canggan, shensha: [] }

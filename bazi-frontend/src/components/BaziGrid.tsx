@@ -55,14 +55,24 @@ const PillarContent = ({ pillar, contentType }: { pillar: any, contentType: stri
     return <div className="h-full flex items-center justify-center text-center px-1 py-2">{renderContent()}</div>;
 };
 
-export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGridProps) {
+export default function BaziGrid({ yuanju, dayun, liunian, relations }: {
+  yuanju: {
+    year: OriginalPillar;
+    month: OriginalPillar;
+    day: OriginalPillar;
+    hour: OriginalPillar;
+  };
+  dayun: DaYunPillar | XiaoYun | null;
+  liunian: LiuNianPillar | null;
+  relations: Relation[];
+}) {
     const gridRef = useRef<HTMLDivElement>(null);
     const [positions, setPositions] = useState<Record<string, number>>({});
 
     const allVisiblePillars = useMemo(() => ({
-        yp: pillars.year, mp: pillars.month, dp: pillars.day, tp: pillars.hour,
+        yp: yuanju.year, mp: yuanju.month, dp: yuanju.day, tp: yuanju.hour,
         dy: dayun, ln: liunian
-    }), [pillars, dayun, liunian]);
+    }), [yuanju, dayun, liunian]);
 
     const elementValueMap = useMemo(() => {
         const map: Record<string, string> = {};
@@ -99,7 +109,7 @@ export default function BaziGrid({ pillars, dayun, liunian, relations }: BaziGri
         return () => {
             if (gridRef.current) resizeObserver.unobserve(gridRef.current);
         };
-    }, [pillars, dayun, liunian]);
+    }, [yuanju, dayun, liunian]);
 
     const visibleIds = useMemo(() => {
         const ids = new Set<string>();

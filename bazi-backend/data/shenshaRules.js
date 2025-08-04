@@ -682,10 +682,10 @@ const shenshaRules = [
         comment: '魁罡',
         preconditions: [],
         rules: [
-          { trigger:{ on:['dayPillar'], value:['壬辰']}, judgment:{ on:'allZhu', value:['壬辰','庚戌','庚辰','戊戌']}},
-          { trigger:{ on:['dayPillar'], value:['庚戌']}, judgment:{ on:'allZhu', value:['壬辰','庚戌','庚辰','戊戌']}},
-          { trigger:{ on:['dayPillar'], value:['庚辰']}, judgment:{ on:'allZhu', value:['壬辰','庚戌','庚辰','戊戌']}},
-          { trigger:{ on:['dayPillar'], value:['戊戌']}, judgment:{ on:'allZhu', value:['壬辰','庚戌','庚辰','戊戌']}}
+          { trigger:{ on:['dayPillar'], value:['壬辰']}, judgment:{ on:'allPillar', value:['壬辰','庚戌','庚辰','戊戌']}},
+          { trigger:{ on:['dayPillar'], value:['庚戌']}, judgment:{ on:'allPillar', value:['壬辰','庚戌','庚辰','戊戌']}},
+          { trigger:{ on:['dayPillar'], value:['庚辰']}, judgment:{ on:'allPillar', value:['壬辰','庚戌','庚辰','戊戌']}},
+          { trigger:{ on:['dayPillar'], value:['戊戌']}, judgment:{ on:'allPillar', value:['壬辰','庚戌','庚辰','戊戌']}}
       ]
     },
     {

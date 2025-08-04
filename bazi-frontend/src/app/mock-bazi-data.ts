@@ -208,7 +208,6 @@ export const mockBaziData: BaziProfile = {
               "id": "xy0_2z",
               "shensha": [
                 "勾煞",
-                "绞煞",
                 "太极贵人",
                 "金舆",
                 "驿马",
@@ -322,7 +321,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln0_3z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -686,6 +684,7 @@ export const mockBaziData: BaziProfile = {
               ],
               "id": "xy0_8z",
               "shensha": [
+                "绞煞",
                 "福星贵人",
                 "文昌贵人",
                 "国印贵人",
@@ -742,6 +741,7 @@ export const mockBaziData: BaziProfile = {
         "value": "乙",
       },
       "id": "dy1p",
+      "index": 1,
       "liunian": [
         {
           "age": 10,
@@ -755,6 +755,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln1_0p",
+          "index": 0,
           "nayin": "长流水",
           "shensha": [],
           "type": "流年",
@@ -781,6 +782,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln1_0z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -800,6 +802,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln1_1p",
+          "index": 1,
           "nayin": "沙中金",
           "shensha": [],
           "type": "流年",
@@ -838,6 +841,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln1_2p",
+          "index": 2,
           "nayin": "沙中金",
           "shensha": [],
           "type": "流年",
@@ -884,6 +888,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln1_3p",
+          "index": 3,
           "nayin": "山下火",
           "shensha": [],
           "type": "流年",
@@ -931,6 +936,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln1_4p",
+          "index": 4,
           "nayin": "山下火",
           "shensha": [],
           "type": "流年",
@@ -969,6 +975,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln1_5p",
+          "index": 5,
           "nayin": "平地木",
           "shensha": [],
           "type": "流年",
@@ -1011,6 +1018,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln1_6p",
+          "index": 6,
           "nayin": "平地木",
           "shensha": [],
           "type": "流年",
@@ -1033,7 +1041,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln1_6z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -1054,6 +1061,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln1_7p",
+          "index": 7,
           "nayin": "壁上土",
           "shensha": [],
           "type": "流年",
@@ -1088,6 +1096,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln1_8p",
+          "index": 8,
           "nayin": "壁上土",
           "shensha": [],
           "type": "流年",
@@ -1132,6 +1141,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln1_9p",
+          "index": 9,
           "nayin": "金箔金",
           "shensha": [],
           "type": "流年",
@@ -1212,6 +1222,7 @@ export const mockBaziData: BaziProfile = {
         "value": "甲",
       },
       "id": "dy2p",
+      "index": 2,
       "liunian": [
         {
           "age": 20,
@@ -1225,6 +1236,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln2_0p",
+          "index": 0,
           "nayin": "金箔金",
           "shensha": [],
           "type": "流年",
@@ -1259,6 +1271,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln2_1p",
+          "index": 1,
           "nayin": "覆灯火",
           "shensha": [],
           "type": "流年",
@@ -1302,6 +1315,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln2_2p",
+          "index": 2,
           "nayin": "覆灯火",
           "shensha": [],
           "type": "流年",
@@ -1328,6 +1342,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln2_2z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -1350,6 +1365,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln2_3p",
+          "index": 3,
           "nayin": "天河水",
           "shensha": [],
           "type": "流年",
@@ -1391,6 +1407,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln2_4p",
+          "index": 4,
           "nayin": "天河水",
           "shensha": [],
           "type": "流年",
@@ -1436,6 +1453,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln2_5p",
+          "index": 5,
           "nayin": "大驿土",
           "shensha": [],
           "type": "流年",
@@ -1480,6 +1498,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln2_6p",
+          "index": 6,
           "nayin": "大驿土",
           "shensha": [],
           "type": "流年",
@@ -1516,6 +1535,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln2_7p",
+          "index": 7,
           "nayin": "钗钏金",
           "shensha": [],
           "type": "流年",
@@ -1558,6 +1578,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln2_8p",
+          "index": 8,
           "nayin": "钗钏金",
           "shensha": [],
           "type": "流年",
@@ -1580,7 +1601,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln2_8z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -1601,6 +1621,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln2_9p",
+          "index": 9,
           "nayin": "桑柘木",
           "shensha": [],
           "type": "流年",
@@ -1662,6 +1683,7 @@ export const mockBaziData: BaziProfile = {
         "value": "癸",
       },
       "id": "dy3p",
+      "index": 3,
       "liunian": [
         {
           "age": 30,
@@ -1675,6 +1697,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln3_0p",
+          "index": 0,
           "nayin": "桑柘木",
           "shensha": [],
           "type": "流年",
@@ -1719,6 +1742,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln3_1p",
+          "index": 1,
           "nayin": "大溪水",
           "shensha": [],
           "type": "流年",
@@ -1764,6 +1788,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln3_2p",
+          "index": 2,
           "nayin": "大溪水",
           "shensha": [],
           "type": "流年",
@@ -1801,6 +1826,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln3_3p",
+          "index": 3,
           "nayin": "沙中土",
           "shensha": [],
           "type": "流年",
@@ -1847,6 +1873,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln3_4p",
+          "index": 4,
           "nayin": "沙中土",
           "shensha": [],
           "type": "流年",
@@ -1873,6 +1900,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln3_4z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -1894,6 +1922,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln3_5p",
+          "index": 5,
           "nayin": "天上火",
           "shensha": [],
           "type": "流年",
@@ -1932,6 +1961,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln3_6p",
+          "index": 6,
           "nayin": "天上火",
           "shensha": [],
           "type": "流年",
@@ -1975,6 +2005,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln3_7p",
+          "index": 7,
           "nayin": "石榴木",
           "shensha": [],
           "type": "流年",
@@ -2019,6 +2050,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln3_8p",
+          "index": 8,
           "nayin": "石榴木",
           "shensha": [],
           "type": "流年",
@@ -2055,6 +2087,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln3_9p",
+          "index": 9,
           "nayin": "大海水",
           "shensha": [],
           "type": "流年",
@@ -2110,7 +2143,6 @@ export const mockBaziData: BaziProfile = {
         "id": "dy3z",
         "shensha": [
           "勾煞",
-          "绞煞",
           "太极贵人",
           "金舆",
           "驿马",
@@ -2131,6 +2163,7 @@ export const mockBaziData: BaziProfile = {
         "value": "壬",
       },
       "id": "dy4p",
+      "index": 4,
       "liunian": [
         {
           "age": 40,
@@ -2144,6 +2177,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln4_0p",
+          "index": 0,
           "nayin": "大海水",
           "shensha": [],
           "type": "流年",
@@ -2166,7 +2200,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln4_0z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -2187,6 +2220,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln4_1p",
+          "index": 1,
           "nayin": "海中金",
           "shensha": [],
           "type": "流年",
@@ -2221,6 +2255,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln4_2p",
+          "index": 2,
           "nayin": "海中金",
           "shensha": [],
           "type": "流年",
@@ -2268,6 +2303,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln4_3p",
+          "index": 3,
           "nayin": "炉中火",
           "shensha": [],
           "type": "流年",
@@ -2316,6 +2352,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln4_4p",
+          "index": 4,
           "nayin": "炉中火",
           "shensha": [],
           "type": "流年",
@@ -2352,6 +2389,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln4_5p",
+          "index": 5,
           "nayin": "大林木",
           "shensha": [],
           "type": "流年",
@@ -2395,6 +2433,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln4_6p",
+          "index": 6,
           "nayin": "大林木",
           "shensha": [],
           "type": "流年",
@@ -2421,6 +2460,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln4_6z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -2440,6 +2480,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln4_7p",
+          "index": 7,
           "nayin": "路旁土",
           "shensha": [],
           "type": "流年",
@@ -2478,6 +2519,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln4_8p",
+          "index": 8,
           "nayin": "路旁土",
           "shensha": [],
           "type": "流年",
@@ -2521,6 +2563,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln4_9p",
+          "index": 9,
           "nayin": "剑锋金",
           "shensha": [],
           "type": "流年",
@@ -2598,6 +2641,7 @@ export const mockBaziData: BaziProfile = {
         "value": "辛",
       },
       "id": "dy5p",
+      "index": 5,
       "liunian": [
         {
           "age": 50,
@@ -2611,6 +2655,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln5_0p",
+          "index": 0,
           "nayin": "剑锋金",
           "shensha": [],
           "type": "流年",
@@ -2647,6 +2692,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln5_1p",
+          "index": 1,
           "nayin": "山头火",
           "shensha": [],
           "type": "流年",
@@ -2689,6 +2735,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln5_2p",
+          "index": 2,
           "nayin": "山头火",
           "shensha": [],
           "type": "流年",
@@ -2711,7 +2758,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln5_2z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -2735,6 +2781,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln5_3p",
+          "index": 3,
           "nayin": "涧下水",
           "shensha": [],
           "type": "流年",
@@ -2772,6 +2819,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln5_4p",
+          "index": 4,
           "nayin": "涧下水",
           "shensha": [],
           "type": "流年",
@@ -2818,6 +2866,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln5_5p",
+          "index": 5,
           "nayin": "城头土",
           "shensha": [],
           "type": "流年",
@@ -2863,6 +2912,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln5_6p",
+          "index": 6,
           "nayin": "城头土",
           "shensha": [],
           "type": "流年",
@@ -2897,6 +2947,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln5_7p",
+          "index": 7,
           "nayin": "白蜡金",
           "shensha": [],
           "type": "流年",
@@ -2940,6 +2991,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln5_8p",
+          "index": 8,
           "nayin": "白蜡金",
           "shensha": [],
           "type": "流年",
@@ -2966,6 +3018,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln5_8z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -2985,6 +3038,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln5_9p",
+          "index": 9,
           "nayin": "杨柳木",
           "shensha": [],
           "type": "流年",
@@ -3050,6 +3104,7 @@ export const mockBaziData: BaziProfile = {
         "value": "庚",
       },
       "id": "dy6p",
+      "index": 6,
       "liunian": [
         {
           "age": 60,
@@ -3063,6 +3118,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln6_0p",
+          "index": 0,
           "nayin": "杨柳木",
           "shensha": [],
           "type": "流年",
@@ -3106,6 +3162,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln6_1p",
+          "index": 1,
           "nayin": "泉中水",
           "shensha": [],
           "type": "流年",
@@ -3150,6 +3207,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln6_2p",
+          "index": 2,
           "nayin": "泉中水",
           "shensha": [],
           "type": "流年",
@@ -3189,6 +3247,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln6_3p",
+          "index": 3,
           "nayin": "屋上土",
           "shensha": [],
           "type": "流年",
@@ -3234,6 +3293,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln6_4p",
+          "index": 4,
           "nayin": "屋上土",
           "shensha": [],
           "type": "流年",
@@ -3256,7 +3316,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln6_4z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -3279,6 +3338,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln6_5p",
+          "index": 5,
           "nayin": "霹雳火",
           "shensha": [],
           "type": "流年",
@@ -3313,6 +3373,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln6_6p",
+          "index": 6,
           "nayin": "霹雳火",
           "shensha": [],
           "type": "流年",
@@ -3357,6 +3418,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln6_7p",
+          "index": 7,
           "nayin": "松柏木",
           "shensha": [],
           "type": "流年",
@@ -3402,6 +3464,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln6_8p",
+          "index": 8,
           "nayin": "松柏木",
           "shensha": [],
           "type": "流年",
@@ -3436,6 +3499,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln6_9p",
+          "index": 9,
           "nayin": "长流水",
           "shensha": [],
           "type": "流年",
@@ -3514,6 +3578,7 @@ export const mockBaziData: BaziProfile = {
         "value": "己",
       },
       "id": "dy7p",
+      "index": 7,
       "liunian": [
         {
           "age": 70,
@@ -3527,6 +3592,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln7_0p",
+          "index": 0,
           "nayin": "长流水",
           "shensha": [],
           "type": "流年",
@@ -3553,6 +3619,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln7_0z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -3572,6 +3639,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln7_1p",
+          "index": 1,
           "nayin": "沙中金",
           "shensha": [],
           "type": "流年",
@@ -3610,6 +3678,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln7_2p",
+          "index": 2,
           "nayin": "沙中金",
           "shensha": [],
           "type": "流年",
@@ -3656,6 +3725,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln7_3p",
+          "index": 3,
           "nayin": "山下火",
           "shensha": [],
           "type": "流年",
@@ -3703,6 +3773,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln7_4p",
+          "index": 4,
           "nayin": "山下火",
           "shensha": [],
           "type": "流年",
@@ -3741,6 +3812,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln7_5p",
+          "index": 5,
           "nayin": "平地木",
           "shensha": [],
           "type": "流年",
@@ -3783,6 +3855,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln7_6p",
+          "index": 6,
           "nayin": "平地木",
           "shensha": [],
           "type": "流年",
@@ -3805,7 +3878,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln7_6z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -3826,6 +3898,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln7_7p",
+          "index": 7,
           "nayin": "壁上土",
           "shensha": [],
           "type": "流年",
@@ -3860,6 +3933,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln7_8p",
+          "index": 8,
           "nayin": "壁上土",
           "shensha": [],
           "type": "流年",
@@ -3904,6 +3978,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln7_9p",
+          "index": 9,
           "nayin": "金箔金",
           "shensha": [],
           "type": "流年",
@@ -3985,6 +4060,7 @@ export const mockBaziData: BaziProfile = {
         "value": "戊",
       },
       "id": "dy8p",
+      "index": 8,
       "liunian": [
         {
           "age": 80,
@@ -3998,6 +4074,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln8_0p",
+          "index": 0,
           "nayin": "金箔金",
           "shensha": [],
           "type": "流年",
@@ -4032,6 +4109,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln8_1p",
+          "index": 1,
           "nayin": "覆灯火",
           "shensha": [],
           "type": "流年",
@@ -4075,6 +4153,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln8_2p",
+          "index": 2,
           "nayin": "覆灯火",
           "shensha": [],
           "type": "流年",
@@ -4101,6 +4180,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln8_2z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -4123,6 +4203,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln8_3p",
+          "index": 3,
           "nayin": "天河水",
           "shensha": [],
           "type": "流年",
@@ -4164,6 +4245,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln8_4p",
+          "index": 4,
           "nayin": "天河水",
           "shensha": [],
           "type": "流年",
@@ -4209,6 +4291,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln8_5p",
+          "index": 5,
           "nayin": "大驿土",
           "shensha": [],
           "type": "流年",
@@ -4253,6 +4336,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln8_6p",
+          "index": 6,
           "nayin": "大驿土",
           "shensha": [],
           "type": "流年",
@@ -4289,6 +4373,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln8_7p",
+          "index": 7,
           "nayin": "钗钏金",
           "shensha": [],
           "type": "流年",
@@ -4331,6 +4416,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln8_8p",
+          "index": 8,
           "nayin": "钗钏金",
           "shensha": [],
           "type": "流年",
@@ -4353,7 +4439,6 @@ export const mockBaziData: BaziProfile = {
             "id": "ln8_8z",
             "shensha": [
               "勾煞",
-              "绞煞",
               "太极贵人",
               "金舆",
               "驿马",
@@ -4374,6 +4459,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln8_9p",
+          "index": 9,
           "nayin": "桑柘木",
           "shensha": [],
           "type": "流年",
@@ -4440,6 +4526,7 @@ export const mockBaziData: BaziProfile = {
         "value": "丁",
       },
       "id": "dy9p",
+      "index": 9,
       "liunian": [
         {
           "age": 90,
@@ -4453,6 +4540,7 @@ export const mockBaziData: BaziProfile = {
             "value": "癸",
           },
           "id": "ln9_0p",
+          "index": 0,
           "nayin": "桑柘木",
           "shensha": [],
           "type": "流年",
@@ -4497,6 +4585,7 @@ export const mockBaziData: BaziProfile = {
             "value": "甲",
           },
           "id": "ln9_1p",
+          "index": 1,
           "nayin": "大溪水",
           "shensha": [],
           "type": "流年",
@@ -4542,6 +4631,7 @@ export const mockBaziData: BaziProfile = {
             "value": "乙",
           },
           "id": "ln9_2p",
+          "index": 2,
           "nayin": "大溪水",
           "shensha": [],
           "type": "流年",
@@ -4579,6 +4669,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丙",
           },
           "id": "ln9_3p",
+          "index": 3,
           "nayin": "沙中土",
           "shensha": [],
           "type": "流年",
@@ -4625,6 +4716,7 @@ export const mockBaziData: BaziProfile = {
             "value": "丁",
           },
           "id": "ln9_4p",
+          "index": 4,
           "nayin": "沙中土",
           "shensha": [],
           "type": "流年",
@@ -4651,6 +4743,7 @@ export const mockBaziData: BaziProfile = {
             ],
             "id": "ln9_4z",
             "shensha": [
+              "绞煞",
               "福星贵人",
               "文昌贵人",
               "国印贵人",
@@ -4672,6 +4765,7 @@ export const mockBaziData: BaziProfile = {
             "value": "戊",
           },
           "id": "ln9_5p",
+          "index": 5,
           "nayin": "天上火",
           "shensha": [],
           "type": "流年",
@@ -4710,6 +4804,7 @@ export const mockBaziData: BaziProfile = {
             "value": "己",
           },
           "id": "ln9_6p",
+          "index": 6,
           "nayin": "天上火",
           "shensha": [],
           "type": "流年",
@@ -4753,6 +4848,7 @@ export const mockBaziData: BaziProfile = {
             "value": "庚",
           },
           "id": "ln9_7p",
+          "index": 7,
           "nayin": "石榴木",
           "shensha": [],
           "type": "流年",
@@ -4797,6 +4893,7 @@ export const mockBaziData: BaziProfile = {
             "value": "辛",
           },
           "id": "ln9_8p",
+          "index": 8,
           "nayin": "石榴木",
           "shensha": [],
           "type": "流年",
@@ -4833,6 +4930,7 @@ export const mockBaziData: BaziProfile = {
             "value": "壬",
           },
           "id": "ln9_9p",
+          "index": 9,
           "nayin": "大海水",
           "shensha": [],
           "type": "流年",
@@ -4892,6 +4990,7 @@ export const mockBaziData: BaziProfile = {
         ],
         "id": "dy9z",
         "shensha": [
+          "绞煞",
           "福星贵人",
           "文昌贵人",
           "国印贵人",
@@ -4902,182 +5001,6 @@ export const mockBaziData: BaziProfile = {
       },
     },
   ],
-  "pillars": {
-    "day": {
-      "gan": {
-        "id": "dg",
-        "shensha": [],
-        "shishen": "日主",
-        "type": "日干",
-        "value": "辛",
-      },
-      "id": "dp",
-      "nayin": "白蜡金",
-      "shensha": [
-        "十恶大败",
-      ],
-      "type": "日柱",
-      "value": "辛巳",
-      "zhi": {
-        "canggan": [
-          {
-            "gan": "丙",
-            "shishen": "正官",
-            "type": "本气",
-          },
-          {
-            "gan": "庚",
-            "shishen": "劫财",
-            "type": "中气",
-          },
-          {
-            "gan": "戊",
-            "shishen": "正印",
-            "type": "余气",
-          },
-        ],
-        "id": "dz",
-        "shensha": [
-          "福星贵人",
-          "文昌贵人",
-          "国印贵人",
-          "劫煞",
-          "地网",
-        ],
-        "type": "日支",
-        "value": "巳",
-      },
-    },
-    "hour": {
-      "gan": {
-        "id": "tg",
-        "shensha": [],
-        "shishen": "劫财",
-        "type": "时干",
-        "value": "庚",
-      },
-      "id": "tp",
-      "nayin": "松柏木",
-      "shensha": [],
-      "type": "时柱",
-      "value": "庚寅",
-      "zhi": {
-        "canggan": [
-          {
-            "gan": "甲",
-            "shishen": "正财",
-            "type": "本气",
-          },
-          {
-            "gan": "丙",
-            "shishen": "正官",
-            "type": "中气",
-          },
-          {
-            "gan": "戊",
-            "shishen": "正印",
-            "type": "余气",
-          },
-        ],
-        "id": "tz",
-        "shensha": [
-          "支童子",
-          "太极贵人",
-          "福星贵人",
-          "驿马",
-          "劫煞",
-        ],
-        "type": "时支",
-        "value": "寅",
-      },
-    },
-    "month": {
-      "gan": {
-        "id": "mg",
-        "shensha": [
-          "月德贵人",
-          "德贵人",
-        ],
-        "shishen": "正官",
-        "type": "月干",
-        "value": "丙",
-      },
-      "id": "mp",
-      "nayin": "炉中火",
-      "shensha": [],
-      "type": "月柱",
-      "value": "丙寅",
-      "zhi": {
-        "canggan": [
-          {
-            "gan": "甲",
-            "shishen": "正财",
-            "type": "本气",
-          },
-          {
-            "gan": "丙",
-            "shishen": "正官",
-            "type": "中气",
-          },
-          {
-            "gan": "戊",
-            "shishen": "正印",
-            "type": "余气",
-          },
-        ],
-        "id": "mz",
-        "shensha": [
-          "太极贵人",
-          "福星贵人",
-          "驿马",
-          "劫煞",
-        ],
-        "type": "月支",
-        "value": "寅",
-      },
-    },
-    "year": {
-      "gan": {
-        "id": "yg",
-        "shensha": [],
-        "shishen": "正财",
-        "type": "年干",
-        "value": "甲",
-      },
-      "id": "yp",
-      "nayin": "泉中水",
-      "shensha": [],
-      "type": "年柱",
-      "value": "甲申",
-      "zhi": {
-        "canggan": [
-          {
-            "gan": "庚",
-            "shishen": "劫财",
-            "type": "本气",
-          },
-          {
-            "gan": "壬",
-            "shishen": "伤官",
-            "type": "中气",
-          },
-          {
-            "gan": "戊",
-            "shishen": "正印",
-            "type": "余气",
-          },
-        ],
-        "id": "yz",
-        "shensha": [
-          "羊刃",
-          "亡神",
-          "空亡",
-        ],
-        "type": "年支",
-        "value": "申",
-      },
-    },
-  },
   "profile": {
     "dayMaster": "辛",
     "gender": "女",
@@ -6502,102 +6425,6 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy3z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln0_3z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln1_6z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln2_8z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln4_0z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln5_2z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln6_4z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln7_6z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "ln8_8z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "xy0_2z",
-        "yz",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "dy6z",
-        "ln6_4z",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "dy3z",
-        "ln3_7z",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
         "dy2z",
         "yz",
       ],
@@ -6691,6 +6518,102 @@ export const mockBaziData: BaziProfile = {
       ],
       "result": "水",
       "type": "半合",
+    },
+    {
+      "elements": [
+        "dy3z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln0_3z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln1_6z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln2_8z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln4_0z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln5_2z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln6_4z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln7_6z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "ln8_8z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "xy0_2z",
+        "yz",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "dy6z",
+        "ln6_4z",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "dy3z",
+        "ln3_7z",
+      ],
+      "result": null,
+      "type": "六穿",
     },
     {
       "elements": [
@@ -7886,6 +7809,174 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
+        "dy1z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln0_5z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln1_8z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln3_0z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln4_2z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln5_4z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln6_6z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln7_8z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln9_0z",
+        "mz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "mz",
+        "xy0_0z",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln0_5z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln1_8z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln3_0z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln4_2z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln5_4z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln6_6z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln7_8z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "ln9_0z",
+        "tz",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "tz",
+        "xy0_0z",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_9z",
+      ],
+      "result": "（盲派专用）",
+      "type": "全暗合",
+    },
+    {
+      "elements": [
         "dy4z",
         "mz",
       ],
@@ -8406,174 +8497,6 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy1z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln0_5z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln1_8z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln3_0z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln4_2z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln5_4z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln6_6z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln7_8z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln9_0z",
-        "mz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "mz",
-        "xy0_0z",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln0_5z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln1_8z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln3_0z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln4_2z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln5_4z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln6_6z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln7_8z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "ln9_0z",
-        "tz",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "tz",
-        "xy0_0z",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "ln1_9z",
-      ],
-      "result": "（盲派专用）",
-      "type": "全暗合",
-    },
-    {
-      "elements": [
         "dy8z",
         "mz",
       ],
@@ -9006,390 +8929,6 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy5z",
-        "dz",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dy5z",
-        "dz",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln0_1z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln0_1z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln1_4z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln1_4z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln2_6z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln2_6z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln3_8z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln3_8z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln5_0z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln5_0z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln6_2z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln6_2z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln7_4z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln7_4z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln8_6z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln8_6z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln9_8z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln9_8z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dz",
-        "xy0_4z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "xy0_4z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dy9z",
-        "ln9_8z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dy9z",
-        "ln9_8z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dy5z",
-        "ln5_8z",
-      ],
-      "result": "（丙辛）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dy5z",
-        "ln5_8z",
-      ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dy3z",
-        "dz",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln0_3z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln1_6z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln2_8z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln4_0z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln5_2z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln6_4z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln7_6z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln8_8z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dz",
-        "xy0_2z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dy3z",
-        "ln3_4z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dy2z",
-        "dz",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln0_4z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln1_7z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln2_9z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln4_1z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln5_3z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln6_5z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln7_7z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "ln8_9z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dz",
-        "xy0_1z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
-        "dy2z",
-        "ln2_2z",
-      ],
-      "result": "（戊癸）",
-      "type": "暗合",
-    },
-    {
-      "elements": [
         "dy1z",
         "dz",
       ],
@@ -9483,6 +9022,390 @@ export const mockBaziData: BaziProfile = {
       ],
       "result": "金",
       "type": "半合",
+    },
+    {
+      "elements": [
+        "dy5z",
+        "dz",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dy5z",
+        "dz",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln0_1z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln0_1z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln1_4z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln1_4z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln2_6z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln2_6z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln3_8z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln3_8z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln5_0z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln5_0z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln6_2z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln6_2z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln7_4z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln7_4z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln8_6z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln8_6z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln9_8z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln9_8z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dz",
+        "xy0_4z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "xy0_4z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dy9z",
+        "ln9_8z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dy9z",
+        "ln9_8z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dy5z",
+        "ln5_8z",
+      ],
+      "result": "（丙辛）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dy5z",
+        "ln5_8z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dy2z",
+        "dz",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln0_4z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln1_7z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln2_9z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln4_1z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln5_3z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln6_5z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln7_7z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln8_9z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dz",
+        "xy0_1z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dy2z",
+        "ln2_2z",
+      ],
+      "result": "（戊癸）",
+      "type": "暗合",
+    },
+    {
+      "elements": [
+        "dy3z",
+        "dz",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln0_3z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln1_6z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln2_8z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln4_0z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln5_2z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln6_4z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln7_6z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "ln8_8z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dz",
+        "xy0_2z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dy3z",
+        "ln3_4z",
+      ],
+      "result": null,
+      "type": "六冲",
     },
     {
       "elements": [
@@ -9598,19 +9521,107 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
+        "dy1z",
+        "ln1_4z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dy5z",
+        "ln5_4z",
+      ],
+      "result": "金",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_7z",
+      ],
+      "result": "土",
+      "type": "六合",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_5z",
+      ],
+      "result": null,
+      "type": "盲派四刑",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_5z",
+      ],
+      "result": null,
+      "type": "相刑",
+    },
+    {
+      "elements": [
+        "dy4z",
+        "ln4_2z",
+      ],
+      "result": null,
+      "type": "盲派四刑",
+    },
+    {
+      "elements": [
+        "dy4z",
+        "ln4_2z",
+      ],
+      "result": null,
+      "type": "相刑",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_2z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_2z",
+      ],
+      "result": null,
+      "type": "相刑",
+    },
+    {
+      "elements": [
+        "dy7z",
+        "ln7_8z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dy7z",
+        "ln7_8z",
+      ],
+      "result": null,
+      "type": "相刑",
+    },
+    {
+      "elements": [
+        "dy1z",
+        "ln1_1z",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
         "dy5z",
         "ln5_0z",
       ],
       "result": null,
       "type": "自刑",
-    },
-    {
-      "elements": [
-        "dy5z",
-        "ln5_1z",
-      ],
-      "result": null,
-      "type": "六穿",
     },
     {
       "elements": [
@@ -9647,18 +9658,10 @@ export const mockBaziData: BaziProfile = {
     {
       "elements": [
         "dy5z",
-        "ln5_4z",
+        "ln5_1z",
       ],
-      "result": "金",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "ln1_4z",
-      ],
-      "result": "金",
-      "type": "半合",
+      "result": null,
+      "type": "六穿",
     },
     {
       "elements": [
@@ -9678,32 +9681,120 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy4z",
-        "ln4_2z",
+        "dy8g",
+        "ln8_0g",
+      ],
+      "result": "火/土/水",
+      "type": "五合",
+    },
+    {
+      "elements": [
+        "dy3g",
+        "ln3_5g",
+      ],
+      "result": "火/土/水",
+      "type": "五合",
+    },
+    {
+      "elements": [
+        "dy2z",
+        "ln2_4z",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "dy7z",
+        "ln7_7z",
+      ],
+      "result": null,
+      "type": "六穿",
+    },
+    {
+      "elements": [
+        "dy2z",
+        "ln2_0z",
       ],
       "result": null,
       "type": "盲派四刑",
     },
     {
       "elements": [
-        "dy4z",
-        "ln4_2z",
+        "dy2z",
+        "ln2_0z",
       ],
       "result": null,
       "type": "相刑",
     },
     {
       "elements": [
-        "dy1z",
-        "ln1_5z",
+        "dy2z",
+        "ln2_3z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dy8z",
+        "ln8_9z",
+      ],
+      "result": null,
+      "type": "六冲",
+    },
+    {
+      "elements": [
+        "dy2z",
+        "ln2_1z",
+      ],
+      "result": "水",
+      "type": "半合",
+    },
+    {
+      "elements": [
+        "dy4z",
+        "ln4_8z",
+      ],
+      "result": null,
+      "type": "六破",
+    },
+    {
+      "elements": [
+        "dy4z",
+        "ln4_8z",
       ],
       "result": null,
       "type": "盲派四刑",
     },
     {
       "elements": [
-        "dy1z",
-        "ln1_5z",
+        "dy4z",
+        "ln4_8z",
+      ],
+      "result": null,
+      "type": "相刑",
+    },
+    {
+      "elements": [
+        "dy7z",
+        "ln7_5z",
+      ],
+      "result": null,
+      "type": "六破",
+    },
+    {
+      "elements": [
+        "dy7z",
+        "ln7_5z",
+      ],
+      "result": null,
+      "type": "盲派四刑",
+    },
+    {
+      "elements": [
+        "dy7z",
+        "ln7_5z",
       ],
       "result": null,
       "type": "相刑",
@@ -9715,14 +9806,6 @@ export const mockBaziData: BaziProfile = {
       ],
       "result": "火",
       "type": "六合",
-    },
-    {
-      "elements": [
-        "dy4z",
-        "ln4_5z",
-      ],
-      "result": null,
-      "type": "六冲",
     },
     {
       "elements": [
@@ -9743,50 +9826,26 @@ export const mockBaziData: BaziProfile = {
     {
       "elements": [
         "dy4z",
-        "ln4_8z",
+        "ln4_5z",
       ],
       "result": null,
-      "type": "六破",
+      "type": "六冲",
     },
     {
       "elements": [
-        "dy4z",
-        "ln4_8z",
+        "dy9g",
+        "ln9_0g",
       ],
       "result": null,
-      "type": "盲派四刑",
+      "type": "四冲",
     },
     {
       "elements": [
-        "dy4z",
-        "ln4_8z",
+        "dy3g",
+        "ln3_4g",
       ],
       "result": null,
-      "type": "相刑",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_5z",
-      ],
-      "result": null,
-      "type": "六破",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_5z",
-      ],
-      "result": null,
-      "type": "盲派四刑",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_5z",
-      ],
-      "result": null,
-      "type": "相刑",
+      "type": "四冲",
     },
     {
       "elements": [
@@ -9806,19 +9865,19 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy9g",
-        "ln9_0g",
+        "dy3z",
+        "ln3_6z",
       ],
-      "result": null,
-      "type": "四冲",
+      "result": "木",
+      "type": "半合",
     },
     {
       "elements": [
-        "dy3g",
-        "ln3_4g",
+        "dy7z",
+        "ln7_6z",
       ],
-      "result": null,
-      "type": "四冲",
+      "result": "木",
+      "type": "半合",
     },
     {
       "elements": [
@@ -9846,139 +9905,19 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy3z",
-        "ln3_6z",
-      ],
-      "result": "木",
-      "type": "半合",
-    },
-    {
-      "elements": [
         "dy7z",
-        "ln7_6z",
+        "ln7_1z",
       ],
-      "result": "木",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dy8g",
-        "ln8_0g",
-      ],
-      "result": "火/土/水",
-      "type": "五合",
-    },
-    {
-      "elements": [
-        "dy3g",
-        "ln3_5g",
-      ],
-      "result": "火/土/水",
-      "type": "五合",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "ln1_7z",
-      ],
-      "result": "土",
+      "result": "火/土",
       "type": "六合",
     },
     {
       "elements": [
-        "dy2z",
-        "ln2_0z",
-      ],
-      "result": null,
-      "type": "盲派四刑",
-    },
-    {
-      "elements": [
-        "dy2z",
-        "ln2_0z",
-      ],
-      "result": null,
-      "type": "相刑",
-    },
-    {
-      "elements": [
-        "dy2z",
-        "ln2_1z",
-      ],
-      "result": "水",
-      "type": "半合",
-    },
-    {
-      "elements": [
-        "dy2z",
-        "ln2_3z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
         "dy8z",
-        "ln8_9z",
+        "ln8_4z",
       ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dy2z",
-        "ln2_4z",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_7z",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "ln1_1z",
-      ],
-      "result": null,
-      "type": "六穿",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "ln1_2z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dy1z",
-        "ln1_2z",
-      ],
-      "result": null,
-      "type": "相刑",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_8z",
-      ],
-      "result": null,
-      "type": "六冲",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_8z",
-      ],
-      "result": null,
-      "type": "相刑",
+      "result": "火/土",
+      "type": "六合",
     },
     {
       "elements": [
@@ -10019,22 +9958,6 @@ export const mockBaziData: BaziProfile = {
       ],
       "result": null,
       "type": "自刑",
-    },
-    {
-      "elements": [
-        "dy8z",
-        "ln8_4z",
-      ],
-      "result": "火/土",
-      "type": "六合",
-    },
-    {
-      "elements": [
-        "dy7z",
-        "ln7_1z",
-      ],
-      "result": "火/土",
-      "type": "六合",
     },
     {
       "elements": [
@@ -10596,15 +10519,6 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy5z",
-        "dz",
-        "ln5_4z",
-      ],
-      "result": "金",
-      "type": "三合",
-    },
-    {
-      "elements": [
         "dy1z",
         "dz",
         "ln1_4z",
@@ -10614,12 +10528,12 @@ export const mockBaziData: BaziProfile = {
     },
     {
       "elements": [
-        "dy8z",
+        "dy5z",
         "dz",
-        "ln8_4z",
+        "ln5_4z",
       ],
-      "result": "火",
-      "type": "三会",
+      "result": "金",
+      "type": "三合",
     },
     {
       "elements": [
@@ -10630,6 +10544,191 @@ export const mockBaziData: BaziProfile = {
       "result": "火",
       "type": "三会",
     },
+    {
+      "elements": [
+        "dy8z",
+        "dz",
+        "ln8_4z",
+      ],
+      "result": "火",
+      "type": "三会",
+    },
   ],
+  "yuanju": {
+    "day": {
+      "gan": {
+        "id": "dg",
+        "shensha": [],
+        "shishen": "日主",
+        "type": "日干",
+        "value": "辛",
+      },
+      "id": "dp",
+      "nayin": "白蜡金",
+      "shensha": [
+        "十恶大败",
+      ],
+      "type": "日柱",
+      "value": "辛巳",
+      "zhi": {
+        "canggan": [
+          {
+            "gan": "丙",
+            "shishen": "正官",
+            "type": "本气",
+          },
+          {
+            "gan": "庚",
+            "shishen": "劫财",
+            "type": "中气",
+          },
+          {
+            "gan": "戊",
+            "shishen": "正印",
+            "type": "余气",
+          },
+        ],
+        "id": "dz",
+        "shensha": [
+          "绞煞",
+          "福星贵人",
+          "文昌贵人",
+          "国印贵人",
+          "劫煞",
+          "地网",
+        ],
+        "type": "日支",
+        "value": "巳",
+      },
+    },
+    "hour": {
+      "gan": {
+        "id": "tg",
+        "shensha": [],
+        "shishen": "劫财",
+        "type": "时干",
+        "value": "庚",
+      },
+      "id": "tp",
+      "nayin": "松柏木",
+      "shensha": [],
+      "type": "时柱",
+      "value": "庚寅",
+      "zhi": {
+        "canggan": [
+          {
+            "gan": "甲",
+            "shishen": "正财",
+            "type": "本气",
+          },
+          {
+            "gan": "丙",
+            "shishen": "正官",
+            "type": "中气",
+          },
+          {
+            "gan": "戊",
+            "shishen": "正印",
+            "type": "余气",
+          },
+        ],
+        "id": "tz",
+        "shensha": [
+          "支童子",
+          "太极贵人",
+          "福星贵人",
+          "驿马",
+          "劫煞",
+        ],
+        "type": "时支",
+        "value": "寅",
+      },
+    },
+    "month": {
+      "gan": {
+        "id": "mg",
+        "shensha": [
+          "月德贵人",
+          "德贵人",
+        ],
+        "shishen": "正官",
+        "type": "月干",
+        "value": "丙",
+      },
+      "id": "mp",
+      "nayin": "炉中火",
+      "shensha": [],
+      "type": "月柱",
+      "value": "丙寅",
+      "zhi": {
+        "canggan": [
+          {
+            "gan": "甲",
+            "shishen": "正财",
+            "type": "本气",
+          },
+          {
+            "gan": "丙",
+            "shishen": "正官",
+            "type": "中气",
+          },
+          {
+            "gan": "戊",
+            "shishen": "正印",
+            "type": "余气",
+          },
+        ],
+        "id": "mz",
+        "shensha": [
+          "太极贵人",
+          "福星贵人",
+          "驿马",
+          "劫煞",
+        ],
+        "type": "月支",
+        "value": "寅",
+      },
+    },
+    "year": {
+      "gan": {
+        "id": "yg",
+        "shensha": [],
+        "shishen": "正财",
+        "type": "年干",
+        "value": "甲",
+      },
+      "id": "yp",
+      "nayin": "泉中水",
+      "shensha": [],
+      "type": "年柱",
+      "value": "甲申",
+      "zhi": {
+        "canggan": [
+          {
+            "gan": "庚",
+            "shishen": "劫财",
+            "type": "本气",
+          },
+          {
+            "gan": "壬",
+            "shishen": "伤官",
+            "type": "中气",
+          },
+          {
+            "gan": "戊",
+            "shishen": "正印",
+            "type": "余气",
+          },
+        ],
+        "id": "yz",
+        "shensha": [
+          "羊刃",
+          "亡神",
+          "空亡",
+        ],
+        "type": "年支",
+        "value": "申",
+      },
+    },
+  },
 }
-

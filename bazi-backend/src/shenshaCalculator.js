@@ -6,7 +6,7 @@ import shenshaRules from '../data/shenshaRules.js';
  * @param {string} id - 要查找的元素ID
  * @returns {Object|null} - 找到的元素对象或null
  */
-// 这是【新代码】，请用它替换旧函数
+
 function findElementById(profile, id) {
     if (!id) return null;
 
@@ -48,36 +48,71 @@ function findElementById(profile, id) {
 }
 
 /**
- * 辅助函数：检查神煞规则的前提条件是否满足
+ * 辅助函数：检查神煞规则的前提条件是否满足（升级版）
  * @param {Object} preconditions - 前提条件对象或数组
  * @param {Object} context - 包含flatMap和gender的上下文
  * @returns {boolean} - 是否满足前提
  */
 function checkPreconditions(preconditions, context) {
-    if (!preconditions) return true;
+    // 如果没有前提条件，则直接通过
+    if (!preconditions || (Array.isArray(preconditions) && preconditions.length === 0)) {
+        return true;
+    }
 
     const { flatMap, gender } = context;
-    const conditions = Array.isArray(preconditions) ? { logic: 'and', conditions: preconditions } : preconditions;
 
-    if (!conditions.conditions || !Array.isArray(conditions.conditions)) {
-        return true; 
-    }
-
-    const check = (cond) => {
-        if (!cond || !cond.on || !cond.value) return false;
+    // 辅助函数1：检查单个条件对象 { on: '...', value: '...' }
+    const checkSingleCondition = (cond) => {
+        if (!cond || !cond.on || !cond.value) {
+            console.warn('[shenshaCalculator] 无效的单个条件:', cond);
+            return false;
+        }
         
-        const value = cond.on === 'gender' ? gender : flatMap.get(cond.on);
-        if (value === undefined) return false;
-        
+        const onKeys = Array.isArray(cond.on) ? cond.on : [cond.on];
         const valueArray = Array.isArray(cond.value) ? cond.value : [cond.value];
-        return valueArray.includes(value);
+
+        // 只要有一个 onKey 满足条件即可（on: [...] 内部是 OR 逻辑）
+        for (const key of onKeys) {
+            const value = key === 'gender' ? gender : flatMap.get(key);
+            if (value !== undefined && valueArray.includes(value)) {
+                return true; 
+            }
+        }
+        return false;
+    };
+    
+    // 辅助函数2：检查一个条件组（group），组内是 AND 逻辑
+    const checkGroup = (group) => {
+        if (!Array.isArray(group)) return false;
+        // 必须满足组内的所有条件
+        return group.every(checkSingleCondition);
     };
 
-    if (conditions.logic === 'or') {
-        return conditions.conditions.some(check);
-    } else {
-        return conditions.conditions.every(check);
+    // --- 核心逻辑 ---
+
+    // 1. 处理最复杂的 `groups` 结构（例如“绞煞”）
+    if (preconditions.groups && Array.isArray(preconditions.groups)) {
+        if (preconditions.logic === 'or') {
+            // 只要有一个 group 满足即可
+            return preconditions.groups.some(checkGroup);
+        } else {
+            // 必须所有 group 都满足（默认为 AND）
+            return preconditions.groups.every(checkGroup);
+        }
     }
+
+    // 2. 兼容旧的、简单的 `conditions` 数组结构（AND 逻辑）
+    if (Array.isArray(preconditions)) {
+        return preconditions.every(checkSingleCondition);
+    }
+    
+    // 3. 处理简单的 `logic: 'or'` 结构
+    if (preconditions.logic === 'or' && Array.isArray(preconditions.conditions)) {
+        return preconditions.conditions.some(checkSingleCondition);
+    }
+
+    // 如果结构不被识别，默认不通过，以保证安全
+    return false;
 }
 
 /**
@@ -147,7 +182,35 @@ function calculateShensha(context) {
             for (const on of judgeOnArray) {
                 if (!on) continue;
                 
-                if (on.startsWith('all')) {
+                if (on === 'allPillar') {
+                    // --- 新增：处理 allPillar 的逻辑 ---
+                    const allPillars = [
+                        baziProfile.yearPillar,
+                        baziProfile.monthPillar,
+                        baziProfile.dayPillar,
+                        baziProfile.hourPillar
+                    ];
+                    
+                    baziProfile.dayun.forEach(dayun => {
+                        allPillars.push(dayun); // 添加大运柱
+                        if (dayun.liunian) {
+                            dayun.liunian.forEach(liunian => {
+                                allPillars.push(liunian); // 添加流年柱
+                                if (liunian.xiaoYun) {
+                                    allPillars.push(liunian.xiaoYun); // 添加小运柱
+                                }
+                            });
+                        }
+                    });
+
+                    allPillars.forEach(pillar => {
+                        if (pillar && pillar.value && judgeValueArray.includes(pillar.value)) {
+                            targetIds.push(pillar.id);
+                        }
+                    });
+
+                } else if (on.startsWith('all')) {
+                    // --- 原有的 allGan / allZhi 逻辑保持不变 ---
                     const type = on.replace('all', '').toLowerCase();
                     judgeValueArray.forEach(v => {
                         if (v && baziIndex[v]) {
@@ -159,6 +222,7 @@ function calculateShensha(context) {
                                                  (id.startsWith('xy') && type.charAt(0) === id.slice(-1)));
                     }
                 } else {
+                    // --- 原有的单点定位逻辑保持不变 ---
                     const prefix = on.match(/^(year|month|day|hour)/)?.[0];
                     if (prefix) {
                         const pillar = baziProfile[`${prefix}Pillar`];

@@ -66,11 +66,12 @@ beforeAll(async () => {
  */
 const createMockContext = (overrides = {}) => {
     // 这是一个基础的 baziProfile 结构，每个测试可以按需修改
+    // --- FIX: 将 nested pillars 结构移除，直接使用 Pillar 后缀 ---
     const baseProfile = {
-        yearPillar: { id: 'yp', gan: { id: 'yg', value: '甲', shensha: [] }, zhi: { id: 'yz', value: '子', shensha: [] } },
-        monthPillar: { id: 'mp', gan: { id: 'mg', value: '丙', shensha: [] }, zhi: { id: 'mz', value: '寅', shensha: [] } },
-        dayPillar: { id: 'dp', gan: { id: 'dg', value: '甲', shensha: [] }, zhi: { id: 'dz', value: '戌', shensha: [] } },
-        hourPillar: { id: 'tp', gan: { id: 'tg', value: '甲', shensha: [] }, zhi: { id: 'tz', value: '子', shensha: [] } },
+        yearPillar: { id: 'yp', value: '甲子', gan: { id: 'yg', value: '甲', shensha: [] }, zhi: { id: 'yz', value: '子', shensha: [] } },
+        monthPillar: { id: 'mp', value: '丙寅', gan: { id: 'mg', value: '丙', shensha: [] }, zhi: { id: 'mz', value: '寅', shensha: [] } },
+        dayPillar: { id: 'dp', value: '甲戌', gan: { id: 'dg', value: '甲', shensha: [] }, zhi: { id: 'dz', value: '戌', shensha: [] } },
+        hourPillar: { id: 'tp', value: '甲子', gan: { id: 'tg', value: '甲', shensha: [] }, zhi: { id: 'tz', value: '子', shensha: [] } },
         dayun: []
     };
 
@@ -79,7 +80,11 @@ const createMockContext = (overrides = {}) => {
         ['dayGan', '甲'],
         ['yearZhi', '子'],
         ['dayZhi', '戌'],
-        // ... 其他可按需添加
+        // --- FIX: 为Pillar和NaYin添加模拟数据 ---
+        ['dayPillar', '甲戌'], 
+        ['yearPillar', '甲子'],
+        ['monthPillar', '丙寅'],
+        ['hourPillar', '甲子'],
     ]);
 
     // 合并覆盖值
@@ -93,6 +98,7 @@ const createMockContext = (overrides = {}) => {
         gender: overrides.gender || '男',
     };
 };
+
 
 
 describe('神煞计算器 (shenshaCalculator)', () => {

@@ -97,7 +97,7 @@ export default function Home() {
       
       <div className="glass-card p-6 md:p-8 mb-8">
         <BaziGrid
-          pillars={baziData.pillars}
+          yuanju={baziData.yuanju}
           dayun={dayunForGrid} 
           liunian={selectedLiunian}
           relations={baziData.relations}

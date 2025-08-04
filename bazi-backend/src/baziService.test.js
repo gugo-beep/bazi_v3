@@ -1,6 +1,3 @@
-//后端jest快照运行，只需cd D:\MYWORK\everydaywork\250703\BA_ZI_V3\bazi-backend
-//然后运行npm test（记得删除原先的__snapshots__文件夹，生成的结果新的文件夹）
-//测试结果放到bazi-frontend\src\app\mock-bazi-data.ts，可以用前端UI查看结果
 // NEW: 导入刑冲合害计算器，因为集成测试需要它
 import { calculateHarmRelations } from './harmCalculator.js';
 import { generateBaziProfile } from './baziService.js';
@@ -10,6 +7,7 @@ describe('八字服务测试套件', () => {
 
   // 在所有测试运行前，只生成一次profile，提高效率
   beforeAll(() => {
+    // MODIFIED: 增加了测试日期，确保与之前的快照一致
     profile = generateBaziProfile('2004-03-03 04:18', '女');
   });
 
@@ -17,7 +15,8 @@ describe('八字服务测试套件', () => {
     it('应该正确生成女性八字信息', () => {
       // MODIFIED: 检查新的顶级属性
       expect(profile).toHaveProperty('profile');
-      expect(profile).toHaveProperty('pillars');
+      // --- FIX 1: 将 'pillars' 修改为 'yuanju' ---
+      expect(profile).toHaveProperty('yuanju'); 
       expect(profile).toHaveProperty('dayun');
       expect(profile).toHaveProperty('relations');
       
@@ -28,8 +27,8 @@ describe('八字服务测试套件', () => {
   
   describe('原局四柱测试', () => {
     it('应该包含正确的原局四柱信息', () => {
-      // MODIFIED: 从 profile.pillars 中获取四柱信息
-      const { year, month, day, hour } = profile.pillars;
+      // --- FIX 2: 从 profile.yuanju 中获取四柱信息 ---
+      const { year, month, day, hour } = profile.yuanju;
 
       expect(year.id).toBe('yp');
       expect(year.type).toBe('年柱');
@@ -46,7 +45,8 @@ describe('八字服务测试套件', () => {
     });
     
     it('应该包含正确的天干十神信息', () => {
-      const { year, month, day, hour } = profile.pillars;
+      // --- FIX 3: 从 profile.yuanju 中获取四柱信息 ---
+      const { year, month, day, hour } = profile.yuanju;
       expect(year.gan).toHaveProperty('shishen');
       expect(month.gan).toHaveProperty('shishen');
       expect(day.gan).toHaveProperty('shishen', '日主');
@@ -54,7 +54,8 @@ describe('八字服务测试套件', () => {
     });
     
     it('应该包含正确的纳音信息', () => {
-      const { year, month, day, hour } = profile.pillars;
+      // --- FIX 4: 从 profile.yuanju 中获取四柱信息 ---
+      const { year, month, day, hour } = profile.yuanju;
       expect(year).toHaveProperty('nayin');
       expect(month).toHaveProperty('nayin');
       expect(day).toHaveProperty('nayin');
@@ -86,7 +87,8 @@ describe('八字服务测试套件', () => {
       const qiyunqian = profile.dayun[0];
       const firstLiunian = qiyunqian.liunian[0];
       expect(firstLiunian.xiaoYun).not.toBeNull();
-      expect(firstLiunian.xiaoYun.id).toMatch(/^xy0_\d+p$/);
+      // MODIFIED: 检查小运的ID现在是柱ID
+      expect(firstLiunian.xiaoYun.id).toMatch(/^xy0_\d+p$/); 
     });
     
     it('应该在正式大运的流年中不包含小运信息', () => {
@@ -98,21 +100,12 @@ describe('八字服务测试套件', () => {
     });
   });
 
-  // MODIFIED: 修正集成测试
   describe('集成测试 (Integration Test)', () => {
     it('baziService 的最终输出应该包含正确的 relations 数组', () => {
-      // 在 beforeAll 中已经生成了 profile，这里直接使用
       expect(profile.relations).toBeInstanceOf(Array);
-
-      // 不再生成单独的relations快照
-      // expect(profile.relations).toMatchSnapshot();
-
-      // 替代方案：使用普通断言
       const hasRelations = profile.relations.length > 0;
       expect(hasRelations).toBe(true);
-
-      // 检查是否包含一些重要的关系类型
-      const relationTypes = [...new Set(profile.relations.map(r => r.type))]; // 获取不重复的类型
+      const relationTypes = [...new Set(profile.relations.map(r => r.type))];
       expect(relationTypes.length).toBeGreaterThan(0);
     });
   });
